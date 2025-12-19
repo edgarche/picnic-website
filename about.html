@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Picnic - Turn every meal into a meaningful connection. Join conversations over breakfast, lunch, and dinner with people who get it.">
+    <title>Picnic - Every Meal is Better with Company</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #AE1528;
+            --warm-orange: #FF6B35;
+            --soft-yellow: #FFE66D;
+            --earthy-green: #4A7C59;
+            --cream: #FFF8F0;
+            --warm-beige: #F5E6D3;
+            --dark-text: #2C2416;
+            --gray-text: #6B5D4F;
+            --primary-blue: #2563EB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(174, 21, 40, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white !important;
+            padding: 0.65rem 1.75rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(174, 21, 40, 0.2);
+        }
+
+        .nav-cta:hover {
+            background: #8B1020;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(174, 21, 40, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-text);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 5rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            /* Content takes left 50% */
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--dark-text);
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary-red);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero .subheadline {
+            font-size: 1.5rem;
+            color: var(--gray-text);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .waitlist-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .waitlist-badge .number {
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            box-shadow: 0 4px 16px rgba(174, 21, 40, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #8B1020;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(174, 21, 40, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark-text);
+            border: 2px solid var(--dark-text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-text);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(44, 36, 22, 0.2);
+        }
+
+        .launch-cities {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-top: 1.5rem;
+        }
+
+        .launch-cities strong {
+            color: var(--dark-text);
+            font-weight: 600;
+        }
+
+        .hero-visual {
+            /* Carousel container - takes right 50% */
+            position: relative;
+            height: 100%;
+            min-height: 600px;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            box-shadow: none;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background: var(--warm-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-photo.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .hero-photo:hover {
+            transform: none;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Carousel Navigation Dots */
+        .carousel-dots {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+
+        .carousel-dot.active {
+            background: white;
+            width: 32px;
+            border-radius: 6px;
+        }
+
+        .carousel-dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Carousel Pause Button */
+        .carousel-pause {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-pause:hover {
+            background: rgba(0, 0, 0, 0.7);
+            transform: scale(1.1);
+        }
+
+        /* This is Picnic Section */
+        .this-is-picnic {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header .kicker {
+            font-size: 0.95rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .section-header p {
+            font-size: 1.35rem;
+            color: var(--gray-text);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .picnic-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .picnic-type-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 24px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .picnic-type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--warm-orange), var(--primary-red));
+        }
+
+        .picnic-type-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .picnic-type-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .picnic-type-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .picnic-type-card p {
+            color: var(--gray-text);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .picnic-type-card .photo-placeholder {
+            width: 100%;
+            height: 180px;
+            background: var(--warm-beige);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+            font-size: 0.85rem;
+        }
+
+        /* Easy Start Section */
+        .easy-start {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--cream) 100%);
+        }
+
+        .easy-steps {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .easy-step {
+            text-align: center;
+            max-width: 250px;
+        }
+
+        .easy-step .step-visual {
+            width: 180px;
+            height: 180px;
+            background: white;
+            border-radius: 24px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            font-size: 4rem;
+            transition: transform 0.3s;
+        }
+
+        .easy-step:hover .step-visual {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .easy-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-text);
+        }
+
+        .easy-step p {
+            color: var(--gray-text);
+            line-height: 1.7;
+        }
+
+        .arrow-separator {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+        }
+
+        .testimonial-box {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .testimonial-box blockquote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--dark-text);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-box .author {
+            font-weight: 600;
+            color: var(--primary-red);
+        }
+
+        /* What You Get Section */
+        .what-you-get {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            padding: 2rem;
+            border-radius: 20px;
+            background: var(--cream);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(174, 21, 40, 0.15);
+        }
+
+        .benefit-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-text);
+        }
+
+        .benefit-card p {
+            color: var(--gray-text);
+            line-height: 1.7;
+        }
+
+        /* Live Events Section */
+        .live-events {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-red) 0%, #8B1020 100%);
+            color: white;
+        }
+
+        .live-events .section-header h2,
+        .live-events .section-header .kicker {
+            color: white;
+        }
+
+        .live-events .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .event-card .event-image {
+            height: 180px;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+            font-size: 0.85rem;
+        }
+
+        .event-card .event-content {
+            padding: 1.75rem;
+        }
+
+        .event-card .event-badge {
+            display: inline-block;
+            background: var(--warm-orange);
+            color: white;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .event-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-text);
+        }
+
+        .event-card .event-meta {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card .event-status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .event-card .spots {
+            font-size: 0.85rem;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .proof-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .proof-card .quote {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--dark-text);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .proof-card .user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .proof-card .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--warm-beige);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--primary-red);
+        }
+
+        .proof-card .user-info .name {
+            font-weight: 600;
+            color: var(--dark-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .proof-card .user-info .stat {
+            font-size: 0.85rem;
+            color: var(--gray-text);
+        }
+
+        /* Transformation Section */
+        .transformation {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--cream) 100%);
+        }
+
+        .transformation-story {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .story-side {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .story-side.before {
+            background: var(--cream);
+        }
+
+        .story-side .label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .story-side .photo-placeholder {
+            width: 100%;
+            height: 200px;
+            background: var(--warm-beige);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-text);
+            font-size: 0.85rem;
+        }
+
+        .story-side p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark-text);
+            margin-bottom: 1.5rem;
+        }
+
+        .story-side .author {
+            font-weight: 600;
+            color: var(--primary-red);
+        }
+
+        .story-side .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--gray-text);
+        }
+
+        /* Premium Teaser */
+        .premium-teaser {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-teaser::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .premium-teaser .section-header h2,
+        .premium-teaser .section-header .kicker,
+        .premium-teaser .section-header p {
+            color: white;
+        }
+
+        .premium-teaser .section-header p {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .premium-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .premium-feature svg {
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .premium-feature span {
+            line-height: 1.7;
+        }
+
+        .btn-premium {
+            background: white;
+            color: #312e81;
+            font-weight: 600;
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-text);
+        }
+
+        .final-cta p {
+            font-size: 1.35rem;
+            color: var(--gray-text);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .email-signup {
+            max-width: 500px;
+            margin: 2rem auto 3rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-signup input {
+            flex: 1;
+            min-width: 250px;
+            padding: 1.1rem 1.75rem;
+            border: 2px solid var(--warm-beige);
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .email-signup input:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .email-signup button {
+            padding: 1.1rem 2.5rem;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .email-signup button:hover {
+            background: #8B1020;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(174, 21, 40, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-visual {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subheadline {
+                font-size: 1.25rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .easy-steps {
+                flex-direction: column;
+            }
+
+            .arrow-separator {
+                transform: rotate(90deg);
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="79" height="79" rx="11.5" fill="url(#pattern0_66_20)" stroke="#AE1528"/>
+<defs>
+<pattern id="pattern0_66_20" patternUnits="userSpaceOnUse" patternTransform="matrix(90.88 0 0 90.88 0 0)" preserveAspectRatio="none" viewBox="0 0 64 64" width="1" height="1">
+<g id="pattern0_66_20_inner">
+<rect width="8" height="8" fill="#F59898"/>
+<rect x="16" width="8" height="8" fill="#F59898"/>
+<rect x="8" width="8" height="8" fill="#AE1528"/>
+<rect x="24" width="8" height="8" fill="#AE1528"/>
+<rect x="32" width="8" height="8" fill="#F59898"/>
+<rect x="48" width="8" height="8" fill="#F59898"/>
+<rect x="40" width="8" height="8" fill="#AE1528"/>
+<rect x="56" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="8" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="8" width="8" height="8" fill="#F59898"/>
+<rect y="8" width="8" height="8" fill="white"/>
+<rect x="16" y="8" width="8" height="8" fill="white"/>
+<rect x="24" y="8" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="8" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="8" width="8" height="8" fill="white"/>
+<rect x="48" y="8" width="8" height="8" fill="white"/>
+<rect y="16" width="8" height="8" fill="#F59898"/>
+<rect x="16" y="16" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="24" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="32" y="16" width="8" height="8" fill="#F59898"/>
+<rect x="48" y="16" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="24" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="24" width="8" height="8" fill="#F59898"/>
+<rect y="24" width="8" height="8" fill="white"/>
+<rect x="16" y="24" width="8" height="8" fill="white"/>
+<rect x="24" y="24" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="24" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="24" width="8" height="8" fill="white"/>
+<rect x="48" y="24" width="8" height="8" fill="white"/>
+<rect y="32" width="8" height="8" fill="#F59898"/>
+<rect x="16" y="32" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="24" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="32" y="32" width="8" height="8" fill="#F59898"/>
+<rect x="48" y="32" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="40" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="40" width="8" height="8" fill="#F59898"/>
+<rect y="40" width="8" height="8" fill="white"/>
+<rect x="16" y="40" width="8" height="8" fill="white"/>
+<rect x="24" y="40" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="40" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="40" width="8" height="8" fill="white"/>
+<rect x="48" y="40" width="8" height="8" fill="white"/>
+<rect y="48" width="8" height="8" fill="#F59898"/>
+<rect x="16" y="48" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="24" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="32" y="48" width="8" height="8" fill="#F59898"/>
+<rect x="48" y="48" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="56" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="56" width="8" height="8" fill="#F59898"/>
+<rect y="56" width="8" height="8" fill="white"/>
+<rect x="16" y="56" width="8" height="8" fill="white"/>
+<rect x="24" y="56" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="56" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="56" width="8" height="8" fill="white"/>
+<rect x="48" y="56" width="8" height="8" fill="white"/>
+</g>
+</pattern></defs>
+</svg>
+                <svg width="80" height="24" viewBox="0 0 107 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 38.4V8.4H3.33333V11.0333C4.24444 10.1222 5.3 9.41111 6.5 8.9C7.7 8.38889 8.98889 8.13334 10.3667 8.13334C12.2111 8.13334 13.8778 8.6 15.3667 9.53333C16.8778 10.4444 18.0778 11.6778 18.9667 13.2333C19.8778 14.7889 20.3333 16.5111 20.3333 18.4C20.3333 20.2889 19.8778 22.0111 18.9667 23.5667C18.0778 25.1222 16.8778 26.3667 15.3667 27.3C13.8778 28.2111 12.2111 28.6667 10.3667 28.6667C9.05556 28.6667 7.82222 28.4333 6.66667 27.9667C5.51111 27.5 4.48889 26.8556 3.6 26.0333V38.4H0ZM9.9 25.4C11.1667 25.4 12.3111 25.0889 13.3333 24.4667C14.3778 23.8222 15.2 22.9778 15.8 21.9333C16.4222 20.8667 16.7333 19.6889 16.7333 18.4C16.7333 17.1111 16.4222 15.9444 15.8 14.9C15.2 13.8333 14.3778 12.9889 13.3333 12.3667C12.3111 11.7222 11.1667 11.4 9.9 11.4C8.63333 11.4 7.47778 11.7222 6.43333 12.3667C5.41111 12.9889 4.58889 13.8333 3.96667 14.9C3.36667 15.9444 3.06667 17.1111 3.06667 18.4C3.06667 19.6889 3.36667 20.8667 3.96667 21.9333C4.58889 22.9778 5.41111 23.8222 6.43333 24.4667C7.47778 25.0889 8.63333 25.4 9.9 25.4Z" fill="#323443"/>
+<path d="M25.3125 28.4V8.4H28.9125V28.4H25.3125ZM27.1125 4.8C26.4458 4.8 25.8792 4.56667 25.4125 4.1C24.9458 3.63333 24.7125 3.06667 24.7125 2.4C24.7125 1.71111 24.9458 1.14445 25.4125 0.700001C25.8792 0.233334 26.4458 0 27.1125 0C27.8014 0 28.3681 0.233334 28.8125 0.700001C29.2792 1.14445 29.5125 1.71111 29.5125 2.4C29.5125 3.06667 29.2792 3.63333 28.8125 4.1C28.3681 4.56667 27.8014 4.8 27.1125 4.8Z" fill="#323443"/>
+<path d="M44.4969 28.8C42.5413 28.8 40.7635 28.3333 39.1635 27.4C37.5635 26.4667 36.2858 25.2111 35.3302 23.6333C34.3747 22.0556 33.8969 20.3111 33.8969 18.4C33.8969 16.4889 34.3747 14.7444 35.3302 13.1667C36.2858 11.5889 37.5635 10.3333 39.1635 9.4C40.7635 8.46667 42.5413 8 44.4969 8C45.9413 8 47.2969 8.25556 48.5635 8.76667C49.8302 9.27778 50.9413 9.95556 51.8969 10.8L50.7969 15.3333C50.2413 14.2222 49.3969 13.2889 48.2635 12.5333C47.1524 11.7778 45.8858 11.4 44.4635 11.4C43.1747 11.4 41.9969 11.7222 40.9302 12.3667C39.8858 12.9889 39.0524 13.8333 38.4302 14.9C37.808 15.9444 37.4969 17.1111 37.4969 18.4C37.4969 19.6667 37.808 20.8333 38.4302 21.9C39.0524 22.9667 39.8858 23.8222 40.9302 24.4667C41.9969 25.0889 43.1747 25.4 44.4635 25.4C45.8858 25.4 47.1524 25.0333 48.2635 24.3C49.3969 23.5667 50.2413 22.6222 50.7969 21.4667L51.8969 26C50.9413 26.8444 49.8302 27.5222 48.5635 28.0333C47.2969 28.5444 45.9413 28.8 44.4969 28.8Z" fill="#323443"/>
+<path d="M56.2969 28.4V8.4H59.6302V11.6333C60.3635 10.4556 61.308 9.55556 62.4635 8.93333C63.6413 8.31111 64.908 8 66.2635 8C67.6858 8 68.9969 8.35556 70.1969 9.06667C71.4191 9.75556 72.408 10.7667 73.1635 12.1C73.9191 13.4111 74.2969 15.0111 74.2969 16.9V28.4H70.6969V17.4C70.6969 15.8222 70.2191 14.4333 69.2635 13.2333C68.3302 12.0111 67.008 11.4 65.2969 11.4C63.8969 11.4 62.6413 11.9111 61.5302 12.9333C60.4413 13.9333 59.8969 15.3889 59.8969 17.3V28.4H56.2969Z" fill="#323443"/>
+<path d="M80.2969 28.4V8.4H83.8969V28.4H80.2969ZM82.0969 4.8C81.4302 4.8 80.8635 4.56667 80.3969 4.1C79.9302 3.63333 79.6969 3.06667 79.6969 2.4C79.6969 1.71111 79.9302 1.14445 80.3969 0.700001C80.8635 0.233334 81.4302 0 82.0969 0C82.7858 0 83.3524 0.233334 83.7969 0.700001C84.2635 1.14445 84.4969 1.71111 84.4969 2.4C84.4969 3.06667 84.2635 3.63333 83.7969 4.1C83.3524 4.56667 82.7858 4.8 82.0969 4.8Z" fill="#323443"/>
+<path d="M99.4812 28.8C97.5257 28.8 95.7479 28.3333 94.1479 27.4C92.5479 26.4667 91.2701 25.2111 90.3146 23.6333C89.359 22.0556 88.8812 20.3111 88.8812 18.4C88.8812 16.4889 89.359 14.7444 90.3146 13.1667C91.2701 11.5889 92.5479 10.3333 94.1479 9.4C95.7479 8.46667 97.5257 8 99.4812 8C100.926 8 102.281 8.25556 103.548 8.76667C104.815 9.27778 105.926 9.95556 106.881 10.8L105.781 15.3333C105.226 14.2222 104.381 13.2889 103.248 12.5333C102.137 11.7778 100.87 11.4 99.4479 11.4C98.159 11.4 96.9812 11.7222 95.9146 12.3667C94.8701 12.9889 94.0368 13.8333 93.4146 14.9C92.7924 15.9444 92.4812 17.1111 92.4812 18.4C92.4812 19.6667 92.7924 20.8333 93.4146 21.9C94.0368 22.9667 94.8701 23.8222 95.9146 24.4667C96.9812 25.0889 98.159 25.4 99.4479 25.4C100.87 25.4 102.137 25.0333 103.248 24.3C104.381 23.5667 105.226 22.6222 105.781 21.4667L106.881 26C105.926 26.8444 104.815 27.5222 103.548 28.0333C102.281 28.5444 100.926 28.8 99.4812 28.8Z" fill="#323443"/>
+</svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#this-is-picnic">This is Picnic</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#waitlist" class="nav-cta">Join Waitlist</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="waitlist-badge">
+                    <span>🎉</span>
+                    <span>Join <span class="number">8,247</span> people on the waitlist</span>
+                </div>
+                
+                <h1>Every Meal is Better with <span class="highlight">Company</span></h1>
+                
+                <p class="subheadline">
+                    Find your people over food. Join meal-based gatherings and discussions (breakfast, lunch, or dinner) that match your vibe, and turn strangers into your new favorite people.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="#waitlist" class="btn-primary">
+                        Get Early Access
+                        <span>→</span>
+                    </a>
+                    <a href="#this-is-picnic" class="btn-secondary">
+                        See How It Works
+                        <span>↓</span>
+                    </a>
+                </div>
+                
+                <p class="launch-cities">
+                    <strong>Launching March 2026 in Salt Lake City, Utah</strong>
+                </p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-carousel">
+                    <div class="hero-photo active">
+                        <img src="https://images.pexels.com/photos/3184195/pexels-photo-3184195.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="People laughing over brunch">
+                    </div>
+                    <div class="hero-photo">
+                        <img src="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Lunch discussion at cafe">
+                    </div>
+                    <div class="hero-photo">
+                        <img src="https://images.pexels.com/photos/6954063/pexels-photo-6954063.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Dinner gathering with wine">
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <button class="carousel-pause" aria-label="Pause carousel">⏸</button>
+                
+                <div class="carousel-dots">
+                    <button class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                    <button class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                    <button class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- This is Picnic Section -->
+    <section class="this-is-picnic" id="this-is-picnic">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">This is Picnic</div>
+                <h2>Real Meals. Real Conversations. Real Connections.</h2>
+                <p>Whether you're a morning person, lunch break warrior, or night owl—there's a Picnic happening when you're free.</p>
+            </div>
+
+            <div class="picnic-types">
+                <div class="picnic-type-card">
+                    <div class="photo-placeholder">
+                        <img src="https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Morning coffee meetup" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <span class="icon">☕</span>
+                    <h3>Morning Coffee Talks</h3>
+                    <p>Start your day with entrepreneurs, creatives, and early risers. Deep conversations over breakfast before the world gets loud.</p>
+                </div>
+
+                <div class="picnic-type-card">
+                    <div class="photo-placeholder">
+                        <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lunch table discussion" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <span class="icon">🥗</span>
+                    <h3>Lunch & Learn</h3>
+                    <p>Turn your lunch hour into networking gold. Meet professionals who share your interests and ambitions over midday meals.</p>
+                </div>
+
+                <div class="picnic-type-card">
+                    <div class="photo-placeholder">
+                        <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Dinner with friends" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                    </div>
+                    <span class="icon">🍷</span>
+                    <h3>Dinner Discussions</h3>
+                    <p>End your day with thought-provoking conversations over great food and wine. Where strangers become friends.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Easy Start Section -->
+    <section class="easy-start" id="how-it-works">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">Getting Started Takes 2 Minutes</div>
+                <h2>Browse → Join → Connect</h2>
+                <p>Finding your people has never been this easy</p>
+            </div>
+
+            <div class="easy-steps">
+                <div class="easy-step">
+                    <div class="step-visual">🔍</div>
+                    <h3>Browse</h3>
+                    <p>Swipe through lunch events, book clubs, startup dinners—whatever sparks your interest.</p>
+                </div>
+
+                <div class="arrow-separator">→</div>
+
+                <div class="easy-step">
+                    <div class="step-visual">✓</div>
+                    <h3>Join</h3>
+                    <p>Tap "Join This Picnic" and you're in. RSVP takes 5 seconds. No awkward messages required.</p>
+                </div>
+
+                <div class="arrow-separator">→</div>
+
+                <div class="easy-step">
+                    <div class="step-visual">🎉</div>
+                    <h3>Connect</h3>
+                    <p>Show up, be yourself, and leave with new friends. It's that simple.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-box">
+                <blockquote>"I joined my first Picnic nervous. Left with 3 new friends and dinner plans for Friday."</blockquote>
+                <p class="author">— Sarah, joined 2 months ago</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="what-you-get">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">What You Get</div>
+                <h2>Everything You Need for Great Conversations</h2>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <span class="icon">📅</span>
+                    <h3>Meet on Your Schedule</h3>
+                    <p>Morning person? Night owl? There's always a Picnic happening when you're free. Filter by time, location, and vibe.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="icon">💬</span>
+                    <h3>Conversation Starters Included</h3>
+                    <p>Every Picnic comes with a topic—from startup strategy to travel stories. No awkward small talk. Just real dialogue.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="icon">🌍</span>
+                    <h3>In-Person or Online</h3>
+                    <p>Meet at your favorite local spot or join a virtual dinner from anywhere. You choose how you connect.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="icon">✅</span>
+                    <h3>Verified & Trustworthy</h3>
+                    <p>User verification, host ratings, and show-rate tracking. Only real people who actually show up.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="icon">👥</span>
+                    <h3>Find Your Tribe</h3>
+                    <p>Join recurring groups—book clubs, founder dinners, foodie squads. Build lasting friendships, not just contacts.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <span class="icon">🎯</span>
+                    <h3>Match Your Vibe</h3>
+                    <p>Filter by interests, profession, group size. Premium members can create women-only or verified-users-only events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Events Section -->
+    <section class="live-events">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">Happening Right Now</div>
+                <h2>Real Picnics, Real People</h2>
+                <p>These events are live on Picnic this week</p>
+            </div>
+
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Coffee shop morning" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-badge">Breakfast</span>
+                        <h3>Coffee & Career Talk</h3>
+                        <p class="event-meta">📅 Tomorrow 8:30 AM</p>
+                        <p class="event-meta">📍 Downtown Austin</p>
+                        <div class="event-status">
+                            <span class="spots">2 spots left</span>
+                            <span style="font-size: 0.85rem; color: #666;">6 people joined</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.pexels.com/photos/3184188/pexels-photo-3184188.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Restaurant lunch" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-badge" style="background: var(--earthy-green);">Lunch</span>
+                        <h3>Tech Startup Discussion</h3>
+                        <p class="event-meta">📅 Thu 12:30 PM</p>
+                        <p class="event-meta">📍 SoMa, SF</p>
+                        <div class="event-status">
+                            <span class="spots" style="color: #666;">Full</span>
+                            <span style="font-size: 0.85rem; color: var(--primary-red);">12 on waitlist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="https://images.pexels.com/photos/3184192/pexels-photo-3184192.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wine and dinner" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-badge" style="background: var(--primary-red);">Dinner</span>
+                        <h3>Wine & Philosophy</h3>
+                        <p class="event-meta">📅 Fri 7:00 PM</p>
+                        <p class="event-meta">📍 Portland, OR</p>
+                        <div class="event-status">
+                            <span class="spots">4 spots left</span>
+                            <span style="font-size: 0.85rem; color: #666;">4 people joined</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof" id="stories">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">Picnic Stories</div>
+                <h2>Join 10,000+ People Who've Said "Yes"</h2>
+                <p>Real stories from people who turned meals into friendships</p>
+            </div>
+
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <p class="quote">"Met my cofounder at a startup founders lunch. We've been building together for 6 months now. Picnic changed my business."</p>
+                    <div class="user">
+                        <div class="user-avatar">JC</div>
+                        <div class="user-info">
+                            <div class="name">James Chen</div>
+                            <div class="stat">Austin · 47 Picnics attended</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proof-card">
+                    <p class="quote">"Found my book club at a Picnic dinner. Now we meet every month and I've read more this year than the last five combined."</p>
+                    <div class="user">
+                        <div class="user-avatar">LM</div>
+                        <div class="user-info">
+                            <div class="name">Lisa Martinez</div>
+                            <div class="stat">Portland · 23 Picnics attended</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="proof-card">
+                    <p class="quote">"Made 12 friends in my first month after moving to NYC. Picnic turned a scary move into an adventure. Best decision I made."</p>
+                    <div class="user">
+                        <div class="user-avatar">MJ</div>
+                        <div class="user-info">
+                            <div class="name">Marcus Johnson</div>
+                            <div class="stat">NYC · 31 Picnics attended</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformation Section -->
+    <section class="transformation">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">Real Transformation</div>
+                <h2>Before Picnic → After Picnic</h2>
+            </div>
+
+            <div class="transformation-story">
+                <div class="story-grid">
+                    <div class="story-side before">
+                        <div class="label">Before</div>
+                        <div class="photo-placeholder">
+                            <img src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Person eating alone at desk" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        </div>
+                        <p>"I used to eat lunch at my desk alone, scrolling through my phone. Weekends were quiet. Making friends as an adult felt impossible."</p>
+                    </div>
+                    <div class="story-side">
+                        <div class="label">After</div>
+                        <div class="photo-placeholder">
+                            <img src="https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=800" alt="People laughing with friends at restaurant" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                        </div>
+                        <p>"Now I have lunch plans 3x a week with a group of entrepreneur friends I talk to daily. I've never felt more connected."</p>
+                        <p class="author">— Maria, Product Manager</p>
+                        <div class="stats">
+                            <span>✓ 4 months on Picnic</span>
+                            <span>✓ 23 events attended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Teaser -->
+    <section class="premium-teaser">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">Premium</div>
+                <h2>Create Your Perfect Gathering</h2>
+                <p>Free users get everything they need. Premium members unlock powerful customization for safer, better events.</p>
+            </div>
+
+            <div class="premium-features">
+                <div class="premium-feature">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Custom group sizes (4 to 100+ people)</span>
+                </div>
+                <div class="premium-feature">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Women-only or verified-users-only events</span>
+                </div>
+                <div class="premium-feature">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Professional filtering (target specific roles)</span>
+                </div>
+                <div class="premium-feature">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Multiple concurrent events</span>
+                </div>
+                <div class="premium-feature">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Priority support & early features</span>
+                </div>
+                <div class="premium-feature">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span>Advanced safety & filtering tools</span>
+                </div>
+            </div>
+
+            <a href="#" class="btn-premium">Learn More About Premium →</a>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="waitlist">
+        <div class="section-container">
+            <h2>Your Table is Waiting</h2>
+            <p>The next time you sit down for a meal, imagine looking across the table and seeing a future friend, business partner, or mentor. That's Picnic.</p>
+
+            <div class="cta-buttons" style="justify-content: center;">
+                <a href="#" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 3rem;">
+                    Get Early Access
+                    <span>→</span>
+                </a>
+            </div>
+
+            <div class="email-signup">
+                <input type="email" placeholder="Enter your email" aria-label="Email address">
+                <button type="submit">Join Waitlist</button>
+            </div>
+
+            <p style="color: var(--gray-text); margin-top: 1rem;">
+                ✨ Get exclusive early access when we launch in your city
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#this-is-picnic">This is Picnic</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">Premium</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#59383d343037192a2d382b2d3829303a37303a773a3634">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Picnic. All rights reserved. | Salt Lake City, Utah</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ========================================
+        // SMOOTH SCROLLING
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ========================================
+        // MOBILE MENU
+        // ========================================
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // ========================================
+        // HERO CAROUSEL
+        // ========================================
+        class HeroCarousel {
+            constructor() {
+                this.slides = document.querySelectorAll('.hero-photo');
+                this.dots = document.querySelectorAll('.carousel-dot');
+                this.pauseBtn = document.querySelector('.carousel-pause');
+                this.currentSlide = 0;
+                this.isPlaying = true;
+                this.interval = null;
+                this.SLIDE_DURATION = 4000; // 4 seconds per slide
+                
+                if (this.slides.length > 0) {
+                    this.init();
+                }
+            }
+            
+            init() {
+                // Start auto-play
+                this.startAutoPlay();
+                
+                // Pause button
+                if (this.pauseBtn) {
+                    this.pauseBtn.addEventListener('click', () => this.togglePlay());
+                }
+                
+                // Dot navigation
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => this.goToSlide(index));
+                });
+                
+                // Pause on hover (accessibility)
+                const carousel = document.querySelector('.hero-visual');
+                if (carousel) {
+                    carousel.addEventListener('mouseenter', () => this.pause());
+                    carousel.addEventListener('mouseleave', () => {
+                        if (this.isPlaying) this.startAutoPlay();
+                    });
+                }
+                
+                // Keyboard navigation (accessibility)
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') this.prevSlide();
+                    if (e.key === 'ArrowRight') this.nextSlide();
+                });
+            }
+            
+            startAutoPlay() {
+                this.interval = setInterval(() => this.nextSlide(), this.SLIDE_DURATION);
+            }
+            
+            pause() {
+                clearInterval(this.interval);
+            }
+            
+            togglePlay() {
+                this.isPlaying = !this.isPlaying;
+                
+                if (this.isPlaying) {
+                    this.pauseBtn.innerHTML = '⏸';
+                    this.startAutoPlay();
+                } else {
+                    this.pauseBtn.innerHTML = '▶';
+                    this.pause();
+                }
+            }
+            
+            goToSlide(index) {
+                // Remove active class from current
+                this.slides[this.currentSlide].classList.remove('active');
+                this.dots[this.currentSlide].classList.remove('active');
+                
+                // Add active class to new
+                this.currentSlide = index;
+                this.slides[this.currentSlide].classList.add('active');
+                this.dots[this.currentSlide].classList.add('active');
+                
+                // Reset interval
+                if (this.isPlaying) {
+                    this.pause();
+                    this.startAutoPlay();
+                }
+            }
+            
+            nextSlide() {
+                const next = (this.currentSlide + 1) % this.slides.length;
+                this.goToSlide(next);
+            }
+            
+            prevSlide() {
+                const prev = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
+                this.goToSlide(prev);
+            }
+        }
+        
+        // Initialize carousel when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                new HeroCarousel();
+            });
+        } else {
+            new HeroCarousel();
+        }
+    </script>
+</body>
+</html>
