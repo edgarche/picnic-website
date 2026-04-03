@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Picnic Privacy Policy — how we collect, use, and protect your personal information.">
+    <title>Privacy Policy - Picnic</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #AE1528;
+            --warm-orange: #FF6B35;
+            --cream: #FFF8F0;
+            --warm-beige: #F5E6D3;
+            --dark-text: #2C2416;
+            --gray-text: #6B5D4F;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: white;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(174, 21, 40, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white !important;
+            padding: 0.65rem 1.75rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(174, 21, 40, 0.2);
+        }
+
+        .nav-cta:hover {
+            background: #8B1020;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(174, 21, 40, 0.3);
+        }
+
+        /* ── Page Hero ── */
+        .legal-hero {
+            margin-top: 80px;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            text-align: center;
+        }
+
+        .legal-hero .kicker {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+
+        .legal-hero .meta {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .legal-hero .plain-language {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: rgba(174, 21, 40, 0.08);
+            border: 1px solid rgba(174, 21, 40, 0.2);
+            border-radius: 12px;
+            padding: 0.85rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 500;
+            max-width: 680px;
+        }
+
+        /* ── Layout ── */
+        .legal-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* ── Sidebar TOC ── */
+        .toc {
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        .toc-list a {
+            text-decoration: none;
+            font-size: 0.875rem;
+            color: var(--gray-text);
+            transition: color 0.2s;
+            display: block;
+            padding: 0.25rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary-red);
+            border-left-color: var(--primary-red);
+        }
+
+        .toc-divider {
+            height: 1px;
+            background: var(--warm-beige);
+            margin: 1rem 0;
+        }
+
+        .toc-other-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-red);
+            text-decoration: none;
+            margin-top: 0.75rem;
+            transition: opacity 0.2s;
+        }
+
+        .toc-other-link:hover {
+            opacity: 0.75;
+        }
+
+        /* ── Document Body ── */
+        .legal-content {
+            min-width: 0;
+        }
+
+        .intro-box {
+            background: rgba(174, 21, 40, 0.06);
+            border-left: 4px solid var(--primary-red);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        .intro-box strong {
+            color: var(--primary-red);
+        }
+
+        .legal-section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        .legal-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--warm-beige);
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+        }
+
+        .section-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            background: rgba(174, 21, 40, 0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .legal-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin: 1.75rem 0 0.75rem;
+        }
+
+        .legal-section p {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+
+        .legal-section ul {
+            margin: 0.75rem 0 1rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .legal-section ul li {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .legal-section ul li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        /* ── Info Cards ── */
+        .info-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.25rem 0;
+        }
+
+        .info-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card ul {
+            margin: 0;
+        }
+
+        /* ── Data table ── */
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .data-cell {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .data-cell .label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .data-cell p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--gray-text);
+            line-height: 1.6;
+        }
+
+        /* ── Rights pills ── */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .right-pill {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            border-left: 3px solid var(--primary-red);
+        }
+
+        .right-pill .right-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.35rem;
+        }
+
+        .right-pill p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            color: var(--gray-text);
+        }
+
+        /* ── Contact Box ── */
+        .contact-box {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p {
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box a {
+            color: var(--primary-red);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+            padding-left: 0;
+        }
+
+        .footer-section ul li::before {
+            display: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .legal-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: static;
+                background: var(--cream);
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .legal-hero h1 {
+                font-size: 2rem;
+            }
+
+            .legal-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="79" height="79" rx="11.5" fill="url(#pattern0_pp)" stroke="#AE1528"/>
+                    <defs>
+                        <pattern id="pattern0_pp" patternUnits="userSpaceOnUse" patternTransform="matrix(90.88 0 0 90.88 0 0)" preserveAspectRatio="none" viewBox="0 0 64 64" width="1" height="1">
+                            <g>
+                                <rect width="8" height="8" fill="#F59898"/><rect x="16" width="8" height="8" fill="#F59898"/><rect x="8" width="8" height="8" fill="#AE1528"/><rect x="24" width="8" height="8" fill="#AE1528"/><rect x="32" width="8" height="8" fill="#F59898"/><rect x="48" width="8" height="8" fill="#F59898"/><rect x="40" width="8" height="8" fill="#AE1528"/><rect x="56" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="8" width="8" height="8" fill="#F59898"/><rect x="8" y="8" width="8" height="8" fill="#F59898"/><rect y="8" width="8" height="8" fill="white"/><rect x="16" y="8" width="8" height="8" fill="white"/><rect x="24" y="8" width="8" height="8" fill="#F59898"/><rect x="40" y="8" width="8" height="8" fill="#F59898"/><rect x="32" y="8" width="8" height="8" fill="white"/><rect x="48" y="8" width="8" height="8" fill="white"/>
+                                <rect y="16" width="8" height="8" fill="#F59898"/><rect x="16" y="16" width="8" height="8" fill="#F59898"/><rect x="8" y="16" width="8" height="8" fill="#AE1528"/><rect x="24" y="16" width="8" height="8" fill="#AE1528"/><rect x="32" y="16" width="8" height="8" fill="#F59898"/><rect x="48" y="16" width="8" height="8" fill="#F59898"/><rect x="40" y="16" width="8" height="8" fill="#AE1528"/><rect x="56" y="16" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="24" width="8" height="8" fill="#F59898"/><rect x="8" y="24" width="8" height="8" fill="#F59898"/><rect y="24" width="8" height="8" fill="white"/><rect x="16" y="24" width="8" height="8" fill="white"/><rect x="24" y="24" width="8" height="8" fill="#F59898"/><rect x="40" y="24" width="8" height="8" fill="#F59898"/><rect x="32" y="24" width="8" height="8" fill="white"/><rect x="48" y="24" width="8" height="8" fill="white"/>
+                                <rect y="32" width="8" height="8" fill="#F59898"/><rect x="16" y="32" width="8" height="8" fill="#F59898"/><rect x="8" y="32" width="8" height="8" fill="#AE1528"/><rect x="24" y="32" width="8" height="8" fill="#AE1528"/><rect x="32" y="32" width="8" height="8" fill="#F59898"/><rect x="48" y="32" width="8" height="8" fill="#F59898"/><rect x="40" y="32" width="8" height="8" fill="#AE1528"/><rect x="56" y="32" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="40" width="8" height="8" fill="#F59898"/><rect x="8" y="40" width="8" height="8" fill="#F59898"/><rect y="40" width="8" height="8" fill="white"/><rect x="16" y="40" width="8" height="8" fill="white"/><rect x="24" y="40" width="8" height="8" fill="#F59898"/><rect x="40" y="40" width="8" height="8" fill="#F59898"/><rect x="32" y="40" width="8" height="8" fill="white"/><rect x="48" y="40" width="8" height="8" fill="white"/>
+                                <rect y="48" width="8" height="8" fill="#F59898"/><rect x="16" y="48" width="8" height="8" fill="#F59898"/><rect x="8" y="48" width="8" height="8" fill="#AE1528"/><rect x="24" y="48" width="8" height="8" fill="#AE1528"/><rect x="32" y="48" width="8" height="8" fill="#F59898"/><rect x="48" y="48" width="8" height="8" fill="#F59898"/><rect x="40" y="48" width="8" height="8" fill="#AE1528"/><rect x="56" y="48" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="56" width="8" height="8" fill="#F59898"/><rect x="8" y="56" width="8" height="8" fill="#F59898"/><rect y="56" width="8" height="8" fill="white"/><rect x="16" y="56" width="8" height="8" fill="white"/><rect x="24" y="56" width="8" height="8" fill="#F59898"/><rect x="40" y="56" width="8" height="8" fill="#F59898"/><rect x="32" y="56" width="8" height="8" fill="white"/><rect x="48" y="56" width="8" height="8" fill="white"/>
+                            </g>
+                        </pattern>
+                    </defs>
+                </svg>
+                <svg width="80" height="24" viewBox="0 0 107 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 38.4V8.4H3.33333V11.0333C4.24444 10.1222 5.3 9.41111 6.5 8.9C7.7 8.38889 8.98889 8.13334 10.3667 8.13334C12.2111 8.13334 13.8778 8.6 15.3667 9.53333C16.8778 10.4444 18.0778 11.6778 18.9667 13.2333C19.8778 14.7889 20.3333 16.5111 20.3333 18.4C20.3333 20.2889 19.8778 22.0111 18.9667 23.5667C18.0778 25.1222 16.8778 26.3667 15.3667 27.3C13.8778 28.2111 12.2111 28.6667 10.3667 28.6667C9.05556 28.6667 7.82222 28.4333 6.66667 27.9667C5.51111 27.5 4.48889 26.8556 3.6 26.0333V38.4H0ZM9.9 25.4C11.1667 25.4 12.3111 25.0889 13.3333 24.4667C14.3778 23.8222 15.2 22.9778 15.8 21.9333C16.4222 20.8667 16.7333 19.6889 16.7333 18.4C16.7333 17.1111 16.4222 15.9444 15.8 14.9C15.2 13.8333 14.3778 12.9889 13.3333 12.3667C12.3111 11.7222 11.1667 11.4 9.9 11.4C8.63333 11.4 7.47778 11.7222 6.43333 12.3667C5.41111 12.9889 4.58889 13.8333 3.96667 14.9C3.36667 15.9444 3.06667 17.1111 3.06667 18.4C3.06667 19.6889 3.36667 20.8667 3.96667 21.9333C4.58889 22.9778 5.41111 23.8222 6.43333 24.4667C7.47778 25.0889 8.63333 25.4 9.9 25.4Z" fill="#323443"/>
+                    <path d="M25.3125 28.4V8.4H28.9125V28.4H25.3125ZM27.1125 4.8C26.4458 4.8 25.8792 4.56667 25.4125 4.1C24.9458 3.63333 24.7125 3.06667 24.7125 2.4C24.7125 1.71111 24.9458 1.14445 25.4125 0.700001C25.8792 0.233334 26.4458 0 27.1125 0C27.8014 0 28.3681 0.233334 28.8125 0.700001C29.2792 1.14445 29.5125 1.71111 29.5125 2.4C29.5125 3.06667 29.2792 3.63333 28.8125 4.1C28.3681 4.56667 27.8014 4.8 27.1125 4.8Z" fill="#323443"/>
+                    <path d="M44.4969 28.8C42.5413 28.8 40.7635 28.3333 39.1635 27.4C37.5635 26.4667 36.2858 25.2111 35.3302 23.6333C34.3747 22.0556 33.8969 20.3111 33.8969 18.4C33.8969 16.4889 34.3747 14.7444 35.3302 13.1667C36.2858 11.5889 37.5635 10.3333 39.1635 9.4C40.7635 8.46667 42.5413 8 44.4969 8C45.9413 8 47.2969 8.25556 48.5635 8.76667C49.8302 9.27778 50.9413 9.95556 51.8969 10.8L50.7969 15.3333C50.2413 14.2222 49.3969 13.2889 48.2635 12.5333C47.1524 11.7778 45.8858 11.4 44.4635 11.4C43.1747 11.4 41.9969 11.7222 40.9302 12.3667C39.8858 12.9889 39.0524 13.8333 38.4302 14.9C37.808 15.9444 37.4969 17.1111 37.4969 18.4C37.4969 19.6667 37.808 20.8333 38.4302 21.9C39.0524 22.9667 39.8858 23.8222 40.9302 24.4667C41.9969 25.0889 43.1747 25.4 44.4635 25.4C45.8858 25.4 47.1524 25.0333 48.2635 24.3C49.3969 23.5667 50.2413 22.6222 50.7969 21.4667L51.8969 26C50.9413 26.8444 49.8302 27.5222 48.5635 28.0333C47.2969 28.5444 45.9413 28.8 44.4969 28.8Z" fill="#323443"/>
+                    <path d="M56.2969 28.4V8.4H59.6302V11.6333C60.3635 10.4556 61.308 9.55556 62.4635 8.93333C63.6413 8.31111 64.908 8 66.2635 8C67.6858 8 68.9969 8.35556 70.1969 9.06667C71.4191 9.75556 72.408 10.7667 73.1635 12.1C73.9191 13.4111 74.2969 15.0111 74.2969 16.9V28.4H70.6969V17.4C70.6969 15.8222 70.2191 14.4333 69.2635 13.2333C68.3302 12.0111 67.008 11.4 65.2969 11.4C63.8969 11.4 62.6413 11.9111 61.5302 12.9333C60.4413 13.9333 59.8969 15.3889 59.8969 17.3V28.4H56.2969Z" fill="#323443"/>
+                    <path d="M80.2969 28.4V8.4H83.8969V28.4H80.2969ZM82.0969 4.8C81.4302 4.8 80.8635 4.56667 80.3969 4.1C79.9302 3.63333 79.6969 3.06667 79.6969 2.4C79.6969 1.71111 79.9302 1.14445 80.3969 0.700001C80.8635 0.233334 81.4302 0 82.0969 0C82.7858 0 83.3524 0.233334 83.7969 0.700001C84.2635 1.14445 84.4969 1.71111 84.4969 2.4C84.4969 3.06667 84.2635 3.63333 83.7969 4.1C83.3524 4.56667 82.7858 4.8 82.0969 4.8Z" fill="#323443"/>
+                    <path d="M99.4812 28.8C97.5257 28.8 95.7479 28.3333 94.1479 27.4C92.5479 26.4667 91.2701 25.2111 90.3146 23.6333C89.359 22.0556 88.8812 20.3111 88.8812 18.4C88.8812 16.4889 89.359 14.7444 90.3146 13.1667C91.2701 11.5889 92.5479 10.3333 94.1479 9.4C95.7479 8.46667 97.5257 8 99.4812 8C100.926 8 102.281 8.25556 103.548 8.76667C104.815 9.27778 105.926 9.95556 106.881 10.8L105.781 15.3333C105.226 14.2222 104.381 13.2889 103.248 12.5333C102.137 11.7778 100.87 11.4 99.4479 11.4C98.159 11.4 96.9812 11.7222 95.9146 12.3667C94.8701 12.9889 94.0368 13.8333 93.4146 14.9C92.7924 15.9444 92.4812 17.1111 92.4812 18.4C92.4812 19.6667 92.7924 20.8333 93.4146 21.9C94.0368 22.9667 94.8701 23.8222 95.9146 24.4667C96.9812 25.0889 98.159 25.4 99.4479 25.4C100.87 25.4 102.137 25.0333 103.248 24.3C104.381 23.5667 105.226 22.6222 105.781 21.4667L106.881 26C105.926 26.8444 104.815 27.5222 103.548 28.0333C102.281 28.5444 100.926 28.8 99.4812 28.8Z" fill="#323443"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#this-is-picnic">This is Picnic</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#waitlist" class="nav-cta">Join Waitlist</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="legal-hero">
+        <div class="kicker">Legal</div>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Effective Date: March 1, 2026 &nbsp;|&nbsp; Last Updated: March 1, 2026</p>
+        <div class="plain-language">
+            🔒 This policy was written to be read and understood — not just to satisfy legal requirements. If anything is unclear, reach out and we'll explain it in plain language.
+        </div>
+    </section>
+
+    <!-- Two-column layout -->
+    <div class="legal-layout">
+
+        <!-- Sidebar TOC -->
+        <aside class="toc">
+            <div class="toc-label">On this page</div>
+            <ul class="toc-list">
+                <li><a href="#s1">1. Information We Collect</a></li>
+                <li><a href="#s2">2. How We Use Your Information</a></li>
+                <li><a href="#s3">3. How We Share Your Information</a></li>
+                <li><a href="#s4">4. Data Retention</a></li>
+                <li><a href="#s5">5. Location Data</a></li>
+                <li><a href="#s6">6. Data Security</a></li>
+                <li><a href="#s7">7. Children's Privacy</a></li>
+                <li><a href="#s8">8. Your Choices and Controls</a></li>
+                <li><a href="#s9">9. Third-Party Links</a></li>
+                <li><a href="#s10">10. International Transfers</a></li>
+                <li><a href="#s11">11. Policy Changes</a></li>
+                <li><a href="#s12">12. Contact Us</a></li>
+                <li><a href="#s13">13. GDPR (EEA / UK)</a></li>
+                <li><a href="#s14">14. CCPA (California)</a></li>
+            </ul>
+            <div class="toc-divider"></div>
+            <a href="terms.html" class="toc-other-link">Terms of Service →</a>
+        </aside>
+
+        <!-- Document content -->
+        <main class="legal-content">
+
+            <div class="intro-box">
+                This Privacy Policy explains how Picnic ("Picnic," "we," "us," or "our") collects, uses, shares, and protects information about you when you use the Picnic mobile application and related services (collectively, the "Service"). By using the Service, you agree to the practices described in this Privacy Policy.
+                <br><br>
+                Picnic is operated from the United States. If you are located in the <strong>European Union, EEA, or United Kingdom</strong>, please read Section 13 for your GDPR rights. If you are located in <strong>California</strong>, please read Section 14 for your CCPA rights.
+            </div>
+
+            <!-- 1 -->
+            <section class="legal-section" id="s1">
+                <h2><span class="section-number">1</span> Information We Collect</h2>
+
+                <h3>1.1 Information You Provide Directly</h3>
+                <p>When you create an account and use the Service, you provide us with:</p>
+                <ul>
+                    <li><strong>Identity information:</strong> Your name, profile photo, and date of birth (to verify you are 18 or older)</li>
+                    <li><strong>Contact information:</strong> Your email address and phone number</li>
+                    <li><strong>Profile information:</strong> Your bio, professional work status, and interest tags you select from our provided categories</li>
+                    <li><strong>Authentication credentials:</strong> Passwords (stored in hashed form) or third-party authentication tokens from Apple, Google, or LinkedIn</li>
+                    <li><strong>Event content:</strong> Event titles, descriptions, conversation topics, locations, and group settings you create</li>
+                    <li><strong>Reviews and ratings:</strong> Written reviews and ratings you submit about events or hosts</li>
+                    <li><strong>Communications:</strong> Messages you send through the in-app messaging features</li>
+                    <li><strong>Reports:</strong> Information you provide when reporting another user or content</li>
+                </ul>
+
+                <h3>1.2 Information We Collect Automatically</h3>
+                <p>When you use the Service, we automatically collect:</p>
+                <ul>
+                    <li><strong>Location information:</strong> Your device location when you are actively using the app and have granted location permission. We do not collect location data when the app is not in use (no background location tracking).</li>
+                    <li><strong>Device information:</strong> Device type, operating system version, unique device identifiers, and mobile network information</li>
+                    <li><strong>Usage data:</strong> Features you interact with, events you browse or join, how you navigate the app, and timestamps of your activity</li>
+                    <li><strong>App performance data:</strong> Crash reports, error logs, and performance diagnostics</li>
+                </ul>
+
+                <h3>1.3 Behavioral and Reputation Data</h3>
+                <p>Because Picnic is a trust-based social platform, we collect and maintain data about your behavior within the Service, including:</p>
+
+                <div class="data-grid">
+                    <div class="data-cell">
+                        <div class="label">Attendance Records</div>
+                        <p>Events you have registered for, attended, cancelled, or failed to attend (no-shows)</p>
+                    </div>
+                    <div class="data-cell">
+                        <div class="label">Show Rate</div>
+                        <p>A calculated score reflecting your attendance reliability over time</p>
+                    </div>
+                    <div class="data-cell">
+                        <div class="label">Verification Status</div>
+                        <p>Whether you have completed phone verification and the number of peer attestations received</p>
+                    </div>
+                    <div class="data-cell">
+                        <div class="label">Host Ratings</div>
+                        <p>Ratings submitted by other users about events you have hosted</p>
+                    </div>
+                </div>
+
+                <p>This behavioral data forms part of your public profile and is visible to other users of the Service. We collect it because the safety and reliability of in-person social dining depends on it.</p>
+
+                <h3>1.4 Information from Third Parties</h3>
+                <p>If you sign in using a third-party authentication provider, we receive basic profile information from that provider (such as your name, email address, and profile photo) as permitted by your settings with that provider. We do not receive your password from any third party. We also receive platform-level analytics and device data from Apple (App Store Connect) and Google (Play Console) as a result of distributing the app through their platforms.</p>
+            </section>
+
+            <!-- 2 -->
+            <section class="legal-section" id="s2">
+                <h2><span class="section-number">2</span> How We Use Your Information</h2>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide, operate, and maintain the Service, including creating your account, matching you with relevant Events, and facilitating communication between users</li>
+                    <li>Verify your identity and age, and maintain the safety and integrity of the platform</li>
+                    <li>Calculate and display reputation metrics including your show rate and verification status</li>
+                    <li>Process Premium subscription purchases and manage your subscription status</li>
+                    <li>Send you notifications about Events you have joined or hosted, platform updates, and safety alerts</li>
+                    <li>Respond to your questions, reports, and support requests</li>
+                    <li>Enforce our Terms of Service and Community Guidelines, including investigating potential violations</li>
+                    <li>Analyze usage patterns and improve the Service</li>
+                    <li>Comply with our legal obligations</li>
+                </ul>
+                <div class="info-card">
+                    <h4>🚫 What we don't do</h4>
+                    <ul>
+                        <li>We do not use your personal information to serve you third-party advertisements</li>
+                        <li>We do not sell your personal information to third parties</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3 -->
+            <section class="legal-section" id="s3">
+                <h2><span class="section-number">3</span> How We Share Your Information</h2>
+
+                <h3>3.1 With Other Users</h3>
+                <p>Picnic is a social platform. Certain information on your profile is visible to other users:</p>
+                <ul>
+                    <li><strong>Public profile:</strong> Your name, profile photo, bio, interest tags, work status (if provided), show rate, events hosted, events attended, no-show count, host rating, and verification status are visible to all users</li>
+                    <li><strong>Event attendance:</strong> When you register for or host an Event, your name, photo, and verification status are visible to other attendees and the host</li>
+                    <li><strong>Reviews:</strong> Reviews you write about Events or hosts are publicly attributed to you</li>
+                </ul>
+                <p>Exact location information for Events is only disclosed to confirmed attendees and the host.</p>
+
+                <h3>3.2 With Service Providers</h3>
+                <p>We share information with third-party vendors who help us operate the Service, including:</p>
+                <ul>
+                    <li><strong>Amazon Web Services</strong> — cloud hosting, data storage, and computing</li>
+                    <li><strong>Google Maps API</strong> — venue search and location services</li>
+                    <li><strong>Email service providers</strong> — transactional notifications</li>
+                    <li><strong>Apple &amp; Google</strong> — app distribution and in-app purchases</li>
+                </ul>
+                <p>These service providers are contractually obligated to use your information only to perform services for us and not for their own purposes.</p>
+
+                <h3>3.3 For Legal Reasons</h3>
+                <p>We may disclose your information if we believe in good faith that such disclosure is necessary to: comply with a legal obligation or court order; protect the rights, property, or safety of Picnic, our users, or the public; detect, prevent, or address fraud, security, or technical issues; or enforce our Terms of Service.</p>
+
+                <h3>3.4 Business Transfers</h3>
+                <p>If Picnic is involved in a merger, acquisition, or sale of all or a portion of its assets, your information may be transferred as part of that transaction. We will notify you of any such change in ownership and your choices regarding your information.</p>
+
+                <h3>3.5 With Your Consent</h3>
+                <p>We may share your information with third parties when you have given us explicit consent to do so.</p>
+            </section>
+
+            <!-- 4 -->
+            <section class="legal-section" id="s4">
+                <h2><span class="section-number">4</span> Data Retention</h2>
+                <p>We retain your personal information for as long as your account is active or as needed to provide you the Service. If you delete your account, we will delete your personal data within <strong>30 days</strong>, except:</p>
+                <ul>
+                    <li>Where we are required to retain it for legal, regulatory, or contractual reasons</li>
+                    <li>Anonymized or aggregated data derived from your information, which does not identify you, may be retained indefinitely for analytics and product improvement purposes</li>
+                    <li>Information that has been incorporated into reviews, event records, or other content visible to other users may be retained in anonymized or de-identified form after account deletion</li>
+                </ul>
+                <p>Attendance records associated with events you hosted or attended may be retained in anonymized form to preserve the integrity of the historical event record for other participants.</p>
+            </section>
+
+            <!-- 5 -->
+            <section class="legal-section" id="s5">
+                <h2><span class="section-number">5</span> Location Data</h2>
+                <p>We access your device's location only when you are actively using the app and only if you have granted location permission. We use location data to show you nearby Events, allow you to set Event locations, and display Event maps to confirmed attendees.</p>
+                <div class="info-card">
+                    <h4>📍 No background location tracking</h4>
+                    <ul>
+                        <li>We do not track your location when the app is not open</li>
+                        <li>You can withdraw location permission at any time through your device settings</li>
+                        <li>Doing so will limit certain features (like nearby event discovery) but won't prevent you from using the app</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 6 -->
+            <section class="legal-section" id="s6">
+                <h2><span class="section-number">6</span> Data Security</h2>
+                <p>We implement industry-standard technical and organizational measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction. These measures include:</p>
+                <ul>
+                    <li>Encrypted data transmission (TLS)</li>
+                    <li>Encrypted data storage</li>
+                    <li>Access controls limiting who can access personal data</li>
+                    <li>Regular security assessments</li>
+                </ul>
+                <p>However, no method of transmission or storage is 100% secure, and we cannot guarantee absolute security. In the event of a data breach affecting your rights, we will notify you in accordance with applicable law.</p>
+            </section>
+
+            <!-- 7 -->
+            <section class="legal-section" id="s7">
+                <h2><span class="section-number">7</span> Children's Privacy</h2>
+                <p>The Service is intended for users who are 18 years of age or older. We do not knowingly collect personal information from individuals under 18. If we become aware that we have inadvertently collected information from a user under 18, we will take steps to delete that information promptly. If you believe a user under 18 has created an account, please contact us at <a href="mailto:legal@startapicnic.com" style="color: var(--primary-red);">legal@startapicnic.com</a>.</p>
+            </section>
+
+            <!-- 8 -->
+            <section class="legal-section" id="s8">
+                <h2><span class="section-number">8</span> Your Choices and Controls</h2>
+
+                <h3>8.1 Account Information</h3>
+                <p>You can review and update your profile information at any time through the app settings.</p>
+
+                <h3>8.2 Location Permissions</h3>
+                <p>You can enable or disable location access through your device settings at any time.</p>
+
+                <h3>8.3 Push Notifications</h3>
+                <p>You can manage push notification preferences through the app settings or your device's notification settings.</p>
+
+                <h3>8.4 Account Deletion</h3>
+                <p>You can delete your account at any time through the app settings. Deletion is permanent and cannot be undone. Upon deletion, your personal data will be removed within 30 days as described in Section 4.</p>
+            </section>
+
+            <!-- 9 -->
+            <section class="legal-section" id="s9">
+                <h2><span class="section-number">9</span> Third-Party Links and Services</h2>
+                <p>The Service may contain links to third-party websites or services, including restaurant websites and venue pages. This Privacy Policy does not apply to third-party services. We encourage you to review the privacy policies of any third-party services you access through the Service.</p>
+            </section>
+
+            <!-- 10 -->
+            <section class="legal-section" id="s10">
+                <h2><span class="section-number">10</span> International Data Transfers</h2>
+                <p>Picnic is operated in the United States, and your information may be stored and processed in the United States or any other country where we or our service providers operate. If you are located outside the United States, please be aware that your information will be transferred to and processed in countries that may have different data protection laws than your country of residence. Where required by applicable law, we implement appropriate safeguards for international transfers, such as Standard Contractual Clauses approved by the European Commission.</p>
+            </section>
+
+            <!-- 11 -->
+            <section class="legal-section" id="s11">
+                <h2><span class="section-number">11</span> Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. If we make material changes, we will notify you through the app or by email before the changes take effect. The "Last Updated" date at the top of this policy reflects when the most recent changes were made. Your continued use of the Service after changes take effect constitutes your acceptance of the revised policy.</p>
+            </section>
+
+            <!-- 12 -->
+            <section class="legal-section" id="s12">
+                <h2><span class="section-number">12</span> Contact Us</h2>
+                <p>If you have questions or concerns about this Privacy Policy or our data practices, please reach out — we're happy to explain our practices in plain language.</p>
+                <div class="contact-box">
+                    <h3>Picnic — Privacy Team</h3>
+                    <p>Questions about your data or this policy?</p>
+                    <a href="mailto:legal@startapicnic.com">legal@startapicnic.com</a>
+                    <br><br>
+                    <a href="https://startapicnic.com" style="color: var(--gray-text);">startapicnic.com</a>
+                </div>
+            </section>
+
+            <!-- 13 -->
+            <section class="legal-section" id="s13">
+                <h2><span class="section-number">13</span> Additional Rights for EEA, UK, and Swiss Users (GDPR)</h2>
+                <p>If you are located in the European Economic Area, United Kingdom, or Switzerland, the following additional terms apply to you under the General Data Protection Regulation (GDPR) and applicable local law.</p>
+
+                <h3>13.1 Legal Basis for Processing</h3>
+                <p>We process your personal data on the following legal bases:</p>
+                <ul>
+                    <li><strong>Performance of a contract:</strong> Processing necessary to provide you the Service, including account creation, event management, and premium subscription features</li>
+                    <li><strong>Legitimate interests:</strong> Processing for safety and trust purposes (show rate tracking, verification, reporting), analytics and product improvement, and fraud prevention, where our interests are not overridden by your rights</li>
+                    <li><strong>Legal obligation:</strong> Processing required to comply with applicable laws</li>
+                    <li><strong>Consent:</strong> Where we have obtained your explicit consent, such as for certain optional profile features or marketing communications</li>
+                </ul>
+
+                <h3>13.2 Your Rights</h3>
+                <p>You have the following rights regarding your personal data:</p>
+                <div class="rights-grid">
+                    <div class="right-pill">
+                        <div class="right-name">Right of Access</div>
+                        <p>Request a copy of the personal data we hold about you</p>
+                    </div>
+                    <div class="right-pill">
+                        <div class="right-name">Right to Rectification</div>
+                        <p>Request correction of inaccurate or incomplete personal data</p>
+                    </div>
+                    <div class="right-pill">
+                        <div class="right-name">Right to Erasure</div>
+                        <p>Request deletion of your personal data, subject to certain legal exceptions</p>
+                    </div>
+                    <div class="right-pill">
+                        <div class="right-name">Right to Restriction</div>
+                        <p>Request that we restrict processing of your data in certain circumstances</p>
+                    </div>
+                    <div class="right-pill">
+                        <div class="right-name">Right to Portability</div>
+                        <p>Request a machine-readable copy of personal data you have provided to us</p>
+                    </div>
+                    <div class="right-pill">
+                        <div class="right-name">Right to Object</div>
+                        <p>Object to processing based on legitimate interests, including for direct marketing</p>
+                    </div>
+                    <div class="right-pill">
+                        <div class="right-name">Right to Withdraw Consent</div>
+                        <p>Withdraw consent at any time without affecting lawfulness of prior processing</p>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem;">To exercise any of these rights, please contact us at <a href="mailto:legal@startapicnic.com" style="color: var(--primary-red);">legal@startapicnic.com</a>. We will respond within 30 days. You also have the right to lodge a complaint with your local data protection authority.</p>
+
+                <h3>13.3 Data Controller</h3>
+                <p>Picnic acts as the data controller for personal data processed through the Service. Our contact information is listed in Section 12.</p>
+            </section>
+
+            <!-- 14 -->
+            <section class="legal-section" id="s14">
+                <h2><span class="section-number">14</span> Additional Rights for California Residents (CCPA)</h2>
+                <p>If you are a California resident, the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA) provide you with the following rights:</p>
+
+                <h3>14.1 Right to Know</h3>
+                <p>You have the right to request that we disclose the categories and specific pieces of personal information we have collected about you, the categories of sources from which we collected it, our business purpose for collecting it, and the categories of third parties with whom we share it.</p>
+
+                <h3>14.2 Right to Delete</h3>
+                <p>You have the right to request that we delete personal information we have collected from you, subject to certain exceptions.</p>
+
+                <h3>14.3 Right to Correct</h3>
+                <p>You have the right to request correction of inaccurate personal information we maintain about you.</p>
+
+                <h3>14.4 Right to Opt-Out of Sale or Sharing</h3>
+                <div class="info-card">
+                    <h4>✅ No opt-out required</h4>
+                    <ul>
+                        <li>Picnic does not sell or share personal information for cross-context behavioral advertising purposes</li>
+                    </ul>
+                </div>
+
+                <h3>14.5 Right to Non-Discrimination</h3>
+                <p>We will not discriminate against you for exercising any of your CCPA rights.</p>
+
+                <h3>14.6 Exercising Your Rights</h3>
+                <p>To exercise your rights, please contact us at <a href="mailto:legal@startapicnic.com" style="color: var(--primary-red);">legal@startapicnic.com</a>. We will verify your identity before processing your request and will respond within 45 days. You may designate an authorized agent to make requests on your behalf.</p>
+
+                <h3>14.7 Categories of Personal Information Collected</h3>
+                <p>In the preceding 12 months, we have collected the following categories of personal information as defined by the CCPA:</p>
+                <ul>
+                    <li>Identifiers (name, email, phone, device ID)</li>
+                    <li>Personal characteristics (age)</li>
+                    <li>Commercial information (subscription records)</li>
+                    <li>Internet or electronic network activity (usage data)</li>
+                    <li>Geolocation data</li>
+                    <li>Audio/visual data (profile photos)</li>
+                    <li>Inferences drawn from the above to create a profile (show rate, verification status)</li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#this-is-picnic">This is Picnic</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="#">Premium</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="mailto:edgar@startapicnic.com">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Picnic. All rights reserved. | Salt Lake City, Utah</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Highlight active TOC item on scroll
+        const sections = document.querySelectorAll('.legal-section');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(link => {
+                        link.style.color = '';
+                        link.style.borderLeftColor = '';
+                    });
+                    const activeLink = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.style.color = '#AE1528';
+                        activeLink.style.borderLeftColor = '#AE1528';
+                    }
+                }
+            });
+        }, { rootMargin: '-80px 0px -60% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
+
+</body>
+</html>
