@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Picnic Terms of Service — the rules and guidelines governing your use of the Picnic app and services.">
+    <title>Terms of Service - Picnic</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #AE1528;
+            --warm-orange: #FF6B35;
+            --cream: #FFF8F0;
+            --warm-beige: #F5E6D3;
+            --dark-text: #2C2416;
+            --gray-text: #6B5D4F;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: white;
+        }
+
+        /* ── Navigation ── */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(174, 21, 40, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white !important;
+            padding: 0.65rem 1.75rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(174, 21, 40, 0.2);
+        }
+
+        .nav-cta:hover {
+            background: #8B1020;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(174, 21, 40, 0.3);
+        }
+
+        /* ── Page Hero ── */
+        .legal-hero {
+            margin-top: 80px;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            text-align: center;
+        }
+
+        .legal-hero .kicker {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+
+        .legal-hero .meta {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .legal-hero .important-notice {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background: rgba(174, 21, 40, 0.08);
+            border: 1px solid rgba(174, 21, 40, 0.2);
+            border-radius: 12px;
+            padding: 0.85rem 1.5rem;
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 500;
+            max-width: 680px;
+        }
+
+        /* ── Layout ── */
+        .legal-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* ── Sidebar TOC ── */
+        .toc {
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        .toc-list a {
+            text-decoration: none;
+            font-size: 0.875rem;
+            color: var(--gray-text);
+            transition: color 0.2s;
+            display: block;
+            padding: 0.25rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary-red);
+            border-left-color: var(--primary-red);
+        }
+
+        .toc-divider {
+            height: 1px;
+            background: var(--warm-beige);
+            margin: 1rem 0;
+        }
+
+        .toc-other-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-red);
+            text-decoration: none;
+            margin-top: 0.75rem;
+            transition: opacity 0.2s;
+        }
+
+        .toc-other-link:hover {
+            opacity: 0.75;
+        }
+
+        /* ── Document Body ── */
+        .legal-content {
+            min-width: 0;
+        }
+
+        .alert-box {
+            background: rgba(174, 21, 40, 0.06);
+            border-left: 4px solid var(--primary-red);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+            color: var(--dark-text);
+            line-height: 1.7;
+        }
+
+        .alert-box strong {
+            color: var(--primary-red);
+        }
+
+        .legal-section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        .legal-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--warm-beige);
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+        }
+
+        .section-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            background: rgba(174, 21, 40, 0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .legal-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin: 1.75rem 0 0.75rem;
+        }
+
+        .legal-section p {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+
+        .legal-section ul {
+            margin: 0.75rem 0 1rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .legal-section ul li {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .legal-section ul li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .caps-notice {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            line-height: 1.8;
+            background: var(--cream);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .inline-highlight {
+            background: rgba(174, 21, 40, 0.07);
+            border-radius: 4px;
+            padding: 0.1em 0.3em;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .pricing-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pricing-pill {
+            background: var(--cream);
+            border: 1px solid var(--warm-beige);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.95rem;
+            color: var(--dark-text);
+        }
+
+        .pricing-pill strong {
+            color: var(--primary-red);
+        }
+
+        /* ── Contact Box ── */
+        .contact-box {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p {
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box a {
+            color: var(--primary-red);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+            padding-left: 0;
+        }
+
+        .footer-section ul li::before {
+            display: none;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .legal-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: static;
+                background: var(--cream);
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .legal-hero h1 {
+                font-size: 2rem;
+            }
+
+            .legal-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" y="0.5" width="79" height="79" rx="11.5" fill="url(#pattern0_66_20)" stroke="#AE1528"/>
+                    <defs>
+                        <pattern id="pattern0_66_20" patternUnits="userSpaceOnUse" patternTransform="matrix(90.88 0 0 90.88 0 0)" preserveAspectRatio="none" viewBox="0 0 64 64" width="1" height="1">
+                            <g id="pattern0_66_20_inner">
+                                <rect width="8" height="8" fill="#F59898"/><rect x="16" width="8" height="8" fill="#F59898"/><rect x="8" width="8" height="8" fill="#AE1528"/><rect x="24" width="8" height="8" fill="#AE1528"/><rect x="32" width="8" height="8" fill="#F59898"/><rect x="48" width="8" height="8" fill="#F59898"/><rect x="40" width="8" height="8" fill="#AE1528"/><rect x="56" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="8" width="8" height="8" fill="#F59898"/><rect x="8" y="8" width="8" height="8" fill="#F59898"/><rect y="8" width="8" height="8" fill="white"/><rect x="16" y="8" width="8" height="8" fill="white"/><rect x="24" y="8" width="8" height="8" fill="#F59898"/><rect x="40" y="8" width="8" height="8" fill="#F59898"/><rect x="32" y="8" width="8" height="8" fill="white"/><rect x="48" y="8" width="8" height="8" fill="white"/>
+                                <rect y="16" width="8" height="8" fill="#F59898"/><rect x="16" y="16" width="8" height="8" fill="#F59898"/><rect x="8" y="16" width="8" height="8" fill="#AE1528"/><rect x="24" y="16" width="8" height="8" fill="#AE1528"/><rect x="32" y="16" width="8" height="8" fill="#F59898"/><rect x="48" y="16" width="8" height="8" fill="#F59898"/><rect x="40" y="16" width="8" height="8" fill="#AE1528"/><rect x="56" y="16" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="24" width="8" height="8" fill="#F59898"/><rect x="8" y="24" width="8" height="8" fill="#F59898"/><rect y="24" width="8" height="8" fill="white"/><rect x="16" y="24" width="8" height="8" fill="white"/><rect x="24" y="24" width="8" height="8" fill="#F59898"/><rect x="40" y="24" width="8" height="8" fill="#F59898"/><rect x="32" y="24" width="8" height="8" fill="white"/><rect x="48" y="24" width="8" height="8" fill="white"/>
+                                <rect y="32" width="8" height="8" fill="#F59898"/><rect x="16" y="32" width="8" height="8" fill="#F59898"/><rect x="8" y="32" width="8" height="8" fill="#AE1528"/><rect x="24" y="32" width="8" height="8" fill="#AE1528"/><rect x="32" y="32" width="8" height="8" fill="#F59898"/><rect x="48" y="32" width="8" height="8" fill="#F59898"/><rect x="40" y="32" width="8" height="8" fill="#AE1528"/><rect x="56" y="32" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="40" width="8" height="8" fill="#F59898"/><rect x="8" y="40" width="8" height="8" fill="#F59898"/><rect y="40" width="8" height="8" fill="white"/><rect x="16" y="40" width="8" height="8" fill="white"/><rect x="24" y="40" width="8" height="8" fill="#F59898"/><rect x="40" y="40" width="8" height="8" fill="#F59898"/><rect x="32" y="40" width="8" height="8" fill="white"/><rect x="48" y="40" width="8" height="8" fill="white"/>
+                                <rect y="48" width="8" height="8" fill="#F59898"/><rect x="16" y="48" width="8" height="8" fill="#F59898"/><rect x="8" y="48" width="8" height="8" fill="#AE1528"/><rect x="24" y="48" width="8" height="8" fill="#AE1528"/><rect x="32" y="48" width="8" height="8" fill="#F59898"/><rect x="48" y="48" width="8" height="8" fill="#F59898"/><rect x="40" y="48" width="8" height="8" fill="#AE1528"/><rect x="56" y="48" width="8" height="8" fill="#AE1528"/>
+                                <rect x="56" y="56" width="8" height="8" fill="#F59898"/><rect x="8" y="56" width="8" height="8" fill="#F59898"/><rect y="56" width="8" height="8" fill="white"/><rect x="16" y="56" width="8" height="8" fill="white"/><rect x="24" y="56" width="8" height="8" fill="#F59898"/><rect x="40" y="56" width="8" height="8" fill="#F59898"/><rect x="32" y="56" width="8" height="8" fill="white"/><rect x="48" y="56" width="8" height="8" fill="white"/>
+                            </g>
+                        </pattern>
+                    </defs>
+                </svg>
+                <svg width="80" height="24" viewBox="0 0 107 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 38.4V8.4H3.33333V11.0333C4.24444 10.1222 5.3 9.41111 6.5 8.9C7.7 8.38889 8.98889 8.13334 10.3667 8.13334C12.2111 8.13334 13.8778 8.6 15.3667 9.53333C16.8778 10.4444 18.0778 11.6778 18.9667 13.2333C19.8778 14.7889 20.3333 16.5111 20.3333 18.4C20.3333 20.2889 19.8778 22.0111 18.9667 23.5667C18.0778 25.1222 16.8778 26.3667 15.3667 27.3C13.8778 28.2111 12.2111 28.6667 10.3667 28.6667C9.05556 28.6667 7.82222 28.4333 6.66667 27.9667C5.51111 27.5 4.48889 26.8556 3.6 26.0333V38.4H0ZM9.9 25.4C11.1667 25.4 12.3111 25.0889 13.3333 24.4667C14.3778 23.8222 15.2 22.9778 15.8 21.9333C16.4222 20.8667 16.7333 19.6889 16.7333 18.4C16.7333 17.1111 16.4222 15.9444 15.8 14.9C15.2 13.8333 14.3778 12.9889 13.3333 12.3667C12.3111 11.7222 11.1667 11.4 9.9 11.4C8.63333 11.4 7.47778 11.7222 6.43333 12.3667C5.41111 12.9889 4.58889 13.8333 3.96667 14.9C3.36667 15.9444 3.06667 17.1111 3.06667 18.4C3.06667 19.6889 3.36667 20.8667 3.96667 21.9333C4.58889 22.9778 5.41111 23.8222 6.43333 24.4667C7.47778 25.0889 8.63333 25.4 9.9 25.4Z" fill="#323443"/>
+                    <path d="M25.3125 28.4V8.4H28.9125V28.4H25.3125ZM27.1125 4.8C26.4458 4.8 25.8792 4.56667 25.4125 4.1C24.9458 3.63333 24.7125 3.06667 24.7125 2.4C24.7125 1.71111 24.9458 1.14445 25.4125 0.700001C25.8792 0.233334 26.4458 0 27.1125 0C27.8014 0 28.3681 0.233334 28.8125 0.700001C29.2792 1.14445 29.5125 1.71111 29.5125 2.4C29.5125 3.06667 29.2792 3.63333 28.8125 4.1C28.3681 4.56667 27.8014 4.8 27.1125 4.8Z" fill="#323443"/>
+                    <path d="M44.4969 28.8C42.5413 28.8 40.7635 28.3333 39.1635 27.4C37.5635 26.4667 36.2858 25.2111 35.3302 23.6333C34.3747 22.0556 33.8969 20.3111 33.8969 18.4C33.8969 16.4889 34.3747 14.7444 35.3302 13.1667C36.2858 11.5889 37.5635 10.3333 39.1635 9.4C40.7635 8.46667 42.5413 8 44.4969 8C45.9413 8 47.2969 8.25556 48.5635 8.76667C49.8302 9.27778 50.9413 9.95556 51.8969 10.8L50.7969 15.3333C50.2413 14.2222 49.3969 13.2889 48.2635 12.5333C47.1524 11.7778 45.8858 11.4 44.4635 11.4C43.1747 11.4 41.9969 11.7222 40.9302 12.3667C39.8858 12.9889 39.0524 13.8333 38.4302 14.9C37.808 15.9444 37.4969 17.1111 37.4969 18.4C37.4969 19.6667 37.808 20.8333 38.4302 21.9C39.0524 22.9667 39.8858 23.8222 40.9302 24.4667C41.9969 25.0889 43.1747 25.4 44.4635 25.4C45.8858 25.4 47.1524 25.0333 48.2635 24.3C49.3969 23.5667 50.2413 22.6222 50.7969 21.4667L51.8969 26C50.9413 26.8444 49.8302 27.5222 48.5635 28.0333C47.2969 28.5444 45.9413 28.8 44.4969 28.8Z" fill="#323443"/>
+                    <path d="M56.2969 28.4V8.4H59.6302V11.6333C60.3635 10.4556 61.308 9.55556 62.4635 8.93333C63.6413 8.31111 64.908 8 66.2635 8C67.6858 8 68.9969 8.35556 70.1969 9.06667C71.4191 9.75556 72.408 10.7667 73.1635 12.1C73.9191 13.4111 74.2969 15.0111 74.2969 16.9V28.4H70.6969V17.4C70.6969 15.8222 70.2191 14.4333 69.2635 13.2333C68.3302 12.0111 67.008 11.4 65.2969 11.4C63.8969 11.4 62.6413 11.9111 61.5302 12.9333C60.4413 13.9333 59.8969 15.3889 59.8969 17.3V28.4H56.2969Z" fill="#323443"/>
+                    <path d="M80.2969 28.4V8.4H83.8969V28.4H80.2969ZM82.0969 4.8C81.4302 4.8 80.8635 4.56667 80.3969 4.1C79.9302 3.63333 79.6969 3.06667 79.6969 2.4C79.6969 1.71111 79.9302 1.14445 80.3969 0.700001C80.8635 0.233334 81.4302 0 82.0969 0C82.7858 0 83.3524 0.233334 83.7969 0.700001C84.2635 1.14445 84.4969 1.71111 84.4969 2.4C84.4969 3.06667 84.2635 3.63333 83.7969 4.1C83.3524 4.56667 82.7858 4.8 82.0969 4.8Z" fill="#323443"/>
+                    <path d="M99.4812 28.8C97.5257 28.8 95.7479 28.3333 94.1479 27.4C92.5479 26.4667 91.2701 25.2111 90.3146 23.6333C89.359 22.0556 88.8812 20.3111 88.8812 18.4C88.8812 16.4889 89.359 14.7444 90.3146 13.1667C91.2701 11.5889 92.5479 10.3333 94.1479 9.4C95.7479 8.46667 97.5257 8 99.4812 8C100.926 8 102.281 8.25556 103.548 8.76667C104.815 9.27778 105.926 9.95556 106.881 10.8L105.781 15.3333C105.226 14.2222 104.381 13.2889 103.248 12.5333C102.137 11.7778 100.87 11.4 99.4479 11.4C98.159 11.4 96.9812 11.7222 95.9146 12.3667C94.8701 12.9889 94.0368 13.8333 93.4146 14.9C92.7924 15.9444 92.4812 17.1111 92.4812 18.4C92.4812 19.6667 92.7924 20.8333 93.4146 21.9C94.0368 22.9667 94.8701 23.8222 95.9146 24.4667C96.9812 25.0889 98.159 25.4 99.4479 25.4C100.87 25.4 102.137 25.0333 103.248 24.3C104.381 23.5667 105.226 22.6222 105.781 21.4667L106.881 26C105.926 26.8444 104.815 27.5222 103.548 28.0333C102.281 28.5444 100.926 28.8 99.4812 28.8Z" fill="#323443"/>
+                </svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#this-is-picnic">This is Picnic</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#waitlist" class="nav-cta">Join Waitlist</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="legal-hero">
+        <div class="kicker">Legal</div>
+        <h1>Terms of Service</h1>
+        <p class="meta">Effective Date: March 1, 2026 &nbsp;|&nbsp; Last Updated: March 1, 2026</p>
+        <div class="important-notice">
+            ⚠️ These Terms contain a mandatory arbitration provision and class action waiver in Section 18. Please read Section 18 carefully before using the Service.
+        </div>
+    </section>
+
+    <!-- Two-column layout -->
+    <div class="legal-layout">
+
+        <!-- Sidebar TOC -->
+        <aside class="toc">
+            <div class="toc-label">On this page</div>
+            <ul class="toc-list">
+                <li><a href="#s1">1. About Picnic</a></li>
+                <li><a href="#s2">2. Eligibility</a></li>
+                <li><a href="#s3">3. Account Registration</a></li>
+                <li><a href="#s4">4. Profiles & Content</a></li>
+                <li><a href="#s5">5. Events & Attendance</a></li>
+                <li><a href="#s6">6. Safety & Community</a></li>
+                <li><a href="#s7">7. Verification System</a></li>
+                <li><a href="#s8">8. Premium Subscription</a></li>
+                <li><a href="#s9">9. Intellectual Property</a></li>
+                <li><a href="#s10">10. Third-Party Services</a></li>
+                <li><a href="#s11">11. Privacy</a></li>
+                <li><a href="#s12">12. Disclaimers</a></li>
+                <li><a href="#s13">13. Limitation of Liability</a></li>
+                <li><a href="#s14">14. Indemnification</a></li>
+                <li><a href="#s15">15. Termination</a></li>
+                <li><a href="#s16">16. Modifications</a></li>
+                <li><a href="#s17">17. Governing Law</a></li>
+                <li><a href="#s18">18. Dispute Resolution</a></li>
+                <li><a href="#s19">19. Miscellaneous</a></li>
+                <li><a href="#s20">20. Contact</a></li>
+            </ul>
+            <div class="toc-divider"></div>
+            <a href="privacy.html" class="toc-other-link">Privacy Policy →</a>
+        </aside>
+
+        <!-- Document content -->
+        <main class="legal-content">
+
+            <div class="alert-box">
+                Welcome to Picnic. These Terms of Service ("Terms") are a legally binding agreement between you and Picnic ("Picnic," "we," "us," or "our") governing your access to and use of the Picnic mobile application and related services (collectively, the "Service"). By creating an account or using the Service, you agree to these Terms in their entirety. If you do not agree, do not use the Service.
+            </div>
+
+            <!-- 1 -->
+            <section class="legal-section" id="s1">
+                <h2><span class="section-number">1</span> About Picnic</h2>
+                <p>Picnic is a social dining platform that facilitates in-person and virtual meal gatherings ("Picnics" or "Events") among adults for the purposes of friendship, professional networking, and meaningful conversation. Picnic is explicitly and intentionally <strong>NOT a dating application</strong>. Events are designed for platonic and professional connection only. Any use of the Service to pursue romantic relationships or engage in behavior inconsistent with this purpose is a violation of these Terms and our Community Guidelines.</p>
+            </section>
+
+            <!-- 2 -->
+            <section class="legal-section" id="s2">
+                <h2><span class="section-number">2</span> Eligibility</h2>
+                <p>To use the Service, you must:</p>
+                <ul>
+                    <li>Be at least 18 years of age. The Service is not intended for individuals under the age of 18. By creating an account, you represent and warrant that you are 18 years of age or older.</li>
+                    <li>Have the legal capacity to enter into a binding contract.</li>
+                    <li>Not be prohibited from using the Service under applicable law.</li>
+                    <li>Not have had a previous account terminated by Picnic for violations of these Terms.</li>
+                </ul>
+                <p>We reserve the right to verify your age at any time and to suspend or terminate accounts that we believe belong to users under 18.</p>
+            </section>
+
+            <!-- 3 -->
+            <section class="legal-section" id="s3">
+                <h2><span class="section-number">3</span> Account Registration and Security</h2>
+                <h3>3.1 Account Creation</h3>
+                <p>You may register for an account using an email address and password, or through supported third-party authentication providers (Apple, Google, or LinkedIn). You agree to provide accurate, complete, and current information during registration. You are responsible for all activity that occurs under your account.</p>
+                <h3>3.2 Phone Verification</h3>
+                <p>To protect the safety and integrity of our community, we may require you to verify a phone number associated with your account. Providing a false or another person's phone number is a violation of these Terms.</p>
+                <h3>3.3 Account Security</h3>
+                <p>You are responsible for maintaining the confidentiality of your login credentials. You agree to notify us immediately at <a href="mailto:legal@startapicnic.com" style="color: var(--primary-red);">legal@startapicnic.com</a> if you become aware of any unauthorized use of your account. Picnic is not liable for any loss resulting from unauthorized account access where you have failed to maintain the security of your credentials.</p>
+                <h3>3.4 One Account Per Person</h3>
+                <p>You may maintain only one active account. Creating multiple accounts, including for the purpose of circumventing a suspension or ban, is prohibited.</p>
+            </section>
+
+            <!-- 4 -->
+            <section class="legal-section" id="s4">
+                <h2><span class="section-number">4</span> User Profiles and Content</h2>
+                <h3>4.1 Profile Accuracy</h3>
+                <p>Your profile must accurately represent you. You may not use a false name, impersonate another person, or create a misleading profile. Profile photos must be clear, recent photos of you.</p>
+                <h3>4.2 User-Generated Content</h3>
+                <p>You retain ownership of all content you submit to the Service, including photos, event descriptions, reviews, and messages ("User Content"). By submitting User Content, you grant Picnic a worldwide, non-exclusive, royalty-free, sublicensable, and transferable license to use, reproduce, display, distribute, and modify your User Content in connection with operating and improving the Service. This license ends when you delete your User Content or your account, subject to any prior distribution.</p>
+                <h3>4.3 Content Standards</h3>
+                <p>You agree not to submit User Content that:</p>
+                <ul>
+                    <li>Is false, misleading, or deceptive</li>
+                    <li>Violates any applicable law or regulation</li>
+                    <li>Infringes the intellectual property rights of any third party</li>
+                    <li>Is defamatory, harassing, threatening, or abusive</li>
+                    <li>Contains nudity, sexual content, or graphic violence</li>
+                    <li>Promotes discrimination based on race, ethnicity, religion, gender, sexual orientation, disability, national origin, or age</li>
+                    <li>Constitutes unsolicited advertising or spam</li>
+                </ul>
+                <p>Picnic reserves the right to remove any User Content that violates these standards at our sole discretion, without notice.</p>
+            </section>
+
+            <!-- 5 -->
+            <section class="legal-section" id="s5">
+                <h2><span class="section-number">5</span> Events and Attendance</h2>
+                <h3>5.1 Event Creation</h3>
+                <p>Hosts who create Events represent that all information provided — including location, time, topic, and group parameters — is accurate and will be honored. Hosts are responsible for the Events they create and for moderating the experience at their Events consistent with Picnic's Community Guidelines.</p>
+                <h3>5.2 Attendance Commitment</h3>
+                <p>When you register to attend an Event, you are making a commitment to the host and other attendees. Picnic takes attendance reliability seriously because no-shows negatively impact other users who planned their time around the Event. Your attendance history, including your show rate and no-show count, will be visible on your public profile.</p>
+                <h3>5.3 Cancellation</h3>
+                <p>If you are unable to attend an Event you have registered for, you must cancel through the app as early as possible. Repeated no-shows without cancellation will result in consequences including but not limited to restrictions on your ability to join future Events, reduced visibility in Event discovery, and account suspension.</p>
+                <h3>5.4 Event Cancellation by Host</h3>
+                <p>Hosts may cancel Events through the app. When an Event is cancelled, all registered attendees will be notified promptly. Picnic is not responsible for any costs or inconvenience incurred by attendees in connection with an Event cancellation by a host.</p>
+                <h3>5.5 Location Disclosure</h3>
+                <p>Exact Event locations are only disclosed to confirmed attendees and the host, in order to protect participant safety. General location information is available to all users browsing Events.</p>
+            </section>
+
+            <!-- 6 -->
+            <section class="legal-section" id="s6">
+                <h2><span class="section-number">6</span> Safety and Community Standards</h2>
+                <h3>6.1 Community Guidelines</h3>
+                <p>Your use of the Service is subject to Picnic's Community Guidelines, which are incorporated into these Terms by reference. The Community Guidelines set out expected standards of behavior at Events and on the platform. Violations of the Community Guidelines may result in account suspension or termination.</p>
+                <h3>6.2 Real-World Meetings</h3>
+                <p>Picnic facilitates in-person gatherings between users who may not know each other. You acknowledge the inherent risks of meeting strangers and agree that Picnic is not responsible for the conduct of other users before, during, or after Events. You are solely responsible for your personal safety. We strongly encourage you to:</p>
+                <ul>
+                    <li>Meet only in public venues</li>
+                    <li>Tell a friend or family member where you are going</li>
+                    <li>Arrange your own transportation</li>
+                    <li>Trust your instincts — if something feels wrong, leave</li>
+                </ul>
+                <h3>6.3 Prohibited Conduct</h3>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the Service for any illegal purpose</li>
+                    <li>Harass, threaten, stalk, or intimidate other users</li>
+                    <li>Use the Service for romantic or sexual solicitation</li>
+                    <li>Collect personal information about other users without their consent</li>
+                    <li>Attempt to circumvent any safety or verification features</li>
+                    <li>Use automated bots or scripts to access the Service</li>
+                    <li>Reverse engineer or attempt to extract the source code of the app</li>
+                </ul>
+                <h3>6.4 Reporting</h3>
+                <p>If you encounter conduct that violates these Terms or the Community Guidelines, you should report it through the in-app reporting feature or by contacting us at <a href="mailto:legal@startapicnic.com" style="color: var(--primary-red);">legal@startapicnic.com</a>. We will investigate all reports and take appropriate action at our discretion.</p>
+            </section>
+
+            <!-- 7 -->
+            <section class="legal-section" id="s7">
+                <h2><span class="section-number">7</span> Verification System</h2>
+                <p>Picnic offers an optional user verification program. Verification is based on signals including phone number confirmation, attendance history, and peer attestations from other verified users. Verification badges represent our good-faith assessment of a user's identity and reliability based on available information — they do not constitute a guarantee of identity, safety, or good conduct. Picnic disclaims all liability for the actions of verified users.</p>
+            </section>
+
+            <!-- 8 -->
+            <section class="legal-section" id="s8">
+                <h2><span class="section-number">8</span> Premium Subscription</h2>
+                <h3>8.1 Subscription Plans</h3>
+                <p>Picnic offers a Premium subscription that unlocks advanced features including custom group sizes, verified-only event creation, and advanced filtering options. Pricing:</p>
+                <div class="pricing-row">
+                    <div class="pricing-pill"><strong>$9.99</strong> / month</div>
+                    <div class="pricing-pill"><strong>$79.99</strong> / year</div>
+                </div>
+                <p>Pricing is subject to change with notice to subscribers.</p>
+                <h3>8.2 In-App Purchases</h3>
+                <p>All Premium subscriptions are processed through Apple App Store or Google Play Store in-app purchase systems. By subscribing, you agree to Apple's or Google's applicable terms of service in addition to these Terms. Picnic does not directly process payment information.</p>
+                <h3>8.3 Cancellation and Refunds</h3>
+                <p>You may cancel your Premium subscription at any time through your Apple App Store or Google Play Store account settings. Cancellation takes effect at the end of the current billing period; you will retain Premium access until that date. Refunds are governed by the refund policies of Apple or Google, as applicable. Picnic does not issue refunds directly.</p>
+                <h3>8.4 Free Tier</h3>
+                <p>Free tier users have access to core features of the Service subject to limitations on group sizes (maximum 8 attendees) and concurrent event creation (one event per time slot). Picnic reserves the right to modify free tier limitations at any time.</p>
+            </section>
+
+            <!-- 9 -->
+            <section class="legal-section" id="s9">
+                <h2><span class="section-number">9</span> Intellectual Property</h2>
+                <p>The Picnic name, logo, app design, and all Picnic-created content are the intellectual property of Picnic and are protected by applicable copyright, trademark, and other laws. You may not use Picnic's intellectual property without our prior written consent. Your use of the Service does not grant you any ownership interest in Picnic's intellectual property.</p>
+            </section>
+
+            <!-- 10 -->
+            <section class="legal-section" id="s10">
+                <h2><span class="section-number">10</span> Third-Party Services</h2>
+                <p>The Service integrates with third-party services including Google Maps (for venue location and discovery), Apple App Store and Google Play Store (for distribution and in-app purchases), and cloud infrastructure providers. Your use of these third-party services is governed by their respective terms and privacy policies. Picnic is not responsible for the practices of any third-party service providers.</p>
+            </section>
+
+            <!-- 11 -->
+            <section class="legal-section" id="s11">
+                <h2><span class="section-number">11</span> Privacy</h2>
+                <p>Your privacy matters to us. Our <a href="privacy.html" style="color: var(--primary-red); font-weight: 600;">Privacy Policy</a>, available within the app and at startapicnic.com, explains how we collect, use, and share your personal information. By using the Service, you agree to our collection and use of information as described in the Privacy Policy, which is incorporated into these Terms by reference.</p>
+            </section>
+
+            <!-- 12 -->
+            <section class="legal-section" id="s12">
+                <h2><span class="section-number">12</span> Disclaimers</h2>
+                <div class="caps-notice">
+                    THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. PICNIC DOES NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+                </div>
+                <div class="caps-notice">
+                    PICNIC DOES NOT CONDUCT CRIMINAL BACKGROUND CHECKS OR VERIFY THE IDENTITY OF USERS BEYOND THE MEASURES DESCRIBED IN SECTION 7. BY USING THE SERVICE, YOU ACKNOWLEDGE THAT PICNIC CANNOT GUARANTEE THE IDENTITY, INTENTIONS, OR CONDUCT OF ANY USER.
+                </div>
+            </section>
+
+            <!-- 13 -->
+            <section class="legal-section" id="s13">
+                <h2><span class="section-number">13</span> Limitation of Liability</h2>
+                <div class="caps-notice">
+                    TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, PICNIC AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF OR INABILITY TO USE THE SERVICE, INCLUDING BUT NOT LIMITED TO PERSONAL INJURY, PROPERTY DAMAGE, EMOTIONAL DISTRESS, OR LOSS OF DATA, EVEN IF PICNIC HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+                </div>
+                <div class="caps-notice">
+                    TO THE EXTENT PICNIC IS FOUND LIABLE FOR ANY CLAIM RELATED TO THE SERVICE, OUR TOTAL AGGREGATE LIABILITY SHALL NOT EXCEED THE GREATER OF: (A) THE AMOUNT YOU PAID TO PICNIC IN THE 12 MONTHS PRECEDING THE CLAIM, OR (B) $100.
+                </div>
+            </section>
+
+            <!-- 14 -->
+            <section class="legal-section" id="s14">
+                <h2><span class="section-number">14</span> Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless Picnic and its officers, directors, employees, and agents from and against any claims, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising from: (a) your use of the Service; (b) your violation of these Terms; (c) your User Content; (d) your interaction with other users, including in-person meetings at Events; or (e) your violation of any applicable law or the rights of any third party.</p>
+            </section>
+
+            <!-- 15 -->
+            <section class="legal-section" id="s15">
+                <h2><span class="section-number">15</span> Termination</h2>
+                <p>Picnic may suspend or terminate your account at any time, with or without notice, for any violation of these Terms or the Community Guidelines, or for any other reason at our sole discretion. You may delete your account at any time through the app settings. Upon termination, your license to use the Service ceases immediately. Sections 9, 12, 13, 14, 17, and 18 survive termination.</p>
+            </section>
+
+            <!-- 16 -->
+            <section class="legal-section" id="s16">
+                <h2><span class="section-number">16</span> Modifications to Terms</h2>
+                <p>Picnic reserves the right to modify these Terms at any time. If we make material changes, we will notify you through the app or by email at least 14 days before the changes take effect. Your continued use of the Service after changes take effect constitutes your acceptance of the revised Terms. If you do not agree to the revised Terms, you must stop using the Service and delete your account.</p>
+            </section>
+
+            <!-- 17 -->
+            <section class="legal-section" id="s17">
+                <h2><span class="section-number">17</span> Governing Law</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the State of Utah, without regard to its conflict of law principles. To the extent any dispute is not subject to arbitration under Section 18, you consent to the exclusive jurisdiction of the state and federal courts located in Salt Lake County, Utah.</p>
+            </section>
+
+            <!-- 18 -->
+            <section class="legal-section" id="s18">
+                <h2><span class="section-number">18</span> Dispute Resolution — Mandatory Arbitration</h2>
+                <div class="alert-box" style="margin-bottom: 1.5rem;">
+                    <strong>Please read this section carefully.</strong> It affects your legal rights.
+                </div>
+                <h3>18.1 Agreement to Arbitrate</h3>
+                <p>You and Picnic agree that any dispute, claim, or controversy arising out of or relating to these Terms or your use of the Service ("Dispute") will be resolved by binding individual arbitration, not in court, except as set forth below.</p>
+                <h3>18.2 Class Action Waiver</h3>
+                <div class="caps-notice">
+                    YOU AND PICNIC AGREE THAT EACH PARTY MAY BRING CLAIMS AGAINST THE OTHER ONLY IN AN INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, CONSOLIDATED, OR REPRESENTATIVE ACTION. THE ARBITRATOR MAY NOT CONSOLIDATE MORE THAN ONE PERSON'S CLAIMS AND MAY NOT PRESIDE OVER ANY FORM OF CLASS OR REPRESENTATIVE PROCEEDING.
+                </div>
+                <h3>18.3 Arbitration Process</h3>
+                <p>Arbitration shall be conducted under the rules of the American Arbitration Association ("AAA") Consumer Arbitration Rules, as modified by these Terms. The arbitration will be conducted in Salt Lake County, Utah, or remotely at the election of either party. The arbitrator's decision will be final and binding and may be entered as a judgment in any court of competent jurisdiction.</p>
+                <h3>18.4 Exceptions</h3>
+                <p>Either party may bring an individual claim in small claims court. Either party may seek emergency injunctive relief in court to prevent irreparable harm pending arbitration. Claims related to intellectual property infringement are not subject to mandatory arbitration.</p>
+                <h3>18.5 Opt-Out</h3>
+                <p>You may opt out of this arbitration agreement within 30 days of first accepting these Terms by sending written notice to <a href="mailto:legal@startapicnic.com" style="color: var(--primary-red);">legal@startapicnic.com</a>. Opting out does not affect any other provision of these Terms.</p>
+            </section>
+
+            <!-- 19 -->
+            <section class="legal-section" id="s19">
+                <h2><span class="section-number">19</span> Miscellaneous</h2>
+                <p>These Terms constitute the entire agreement between you and Picnic regarding the Service and supersede all prior agreements. If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force. Our failure to enforce any provision does not constitute a waiver. You may not assign your rights under these Terms without our prior written consent. We may assign our rights freely. Notices to Picnic should be sent to <a href="mailto:legal@startapicnic.com" style="color: var(--primary-red);">legal@startapicnic.com</a>.</p>
+            </section>
+
+            <!-- 20 -->
+            <section class="legal-section" id="s20">
+                <h2><span class="section-number">20</span> Contact</h2>
+                <p>For questions about these Terms, please reach out — we're happy to explain anything in plain language.</p>
+                <div class="contact-box">
+                    <h3>Picnic — Legal Team</h3>
+                    <p>Have a question about these Terms?</p>
+                    <a href="mailto:legal@startapicnic.com">legal@startapicnic.com</a>
+                    <br><br>
+                    <a href="https://startapicnic.com" style="color: var(--gray-text);">startapicnic.com</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#this-is-picnic">This is Picnic</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="#">Premium</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="mailto:edgar@startapicnic.com">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Picnic. All rights reserved. | Salt Lake City, Utah</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Highlight active TOC item on scroll
+        const sections = document.querySelectorAll('.legal-section');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(link => {
+                        link.style.color = '';
+                        link.style.borderLeftColor = '';
+                    });
+                    const activeLink = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.style.color = '#AE1528';
+                        activeLink.style.borderLeftColor = '#AE1528';
+                    }
+                }
+            });
+        }, { rootMargin: '-80px 0px -60% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
+
+</body>
+</html>
