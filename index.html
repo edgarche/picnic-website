@@ -105,6 +105,7 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--dark-text);
+            line-height: 1;
         }
 
         /* Hero Section */
@@ -714,8 +715,27 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .nav-container {
+                position: relative;
+            }
+
             .nav-links {
                 display: none;
+            }
+
+            .nav-links.is-open {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.25rem;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 1.5rem 2rem;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+                border-bottom: 1px solid rgba(174, 21, 40, 0.1);
             }
 
             .mobile-menu-btn {
@@ -866,7 +886,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="#download" class="nav-cta">Get the App</a></li>
             </ul>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
         </div>
     </nav>
 
@@ -1177,10 +1197,36 @@
         // ========================================
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
-        
+
         if (mobileMenuBtn && navLinks) {
+            const closeMenu = () => {
+                navLinks.classList.remove('is-open');
+                mobileMenuBtn.textContent = '☰';
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            };
+
+            const openMenu = () => {
+                navLinks.classList.add('is-open');
+                mobileMenuBtn.textContent = '✕';
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            };
+
             mobileMenuBtn.addEventListener('click', () => {
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.classList.contains('is-open') ? closeMenu() : openMenu();
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('click', (e) => {
+                if (navLinks.classList.contains('is-open') && !navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeMenu();
             });
         }
 
