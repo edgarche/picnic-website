@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Answers to common questions about using Picnic - getting started, safety, events, groups, premium, and your account.">
+    <title>FAQ - Picnic</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #AE1528;
+            --warm-orange: #FF6B35;
+            --soft-yellow: #FFE66D;
+            --earthy-green: #4A7C59;
+            --cream: #FFF8F0;
+            --warm-beige: #F5E6D3;
+            --dark-text: #2C2416;
+            --gray-text: #6B5D4F;
+            --primary-blue: #2563EB;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(174, 21, 40, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--dark-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-text);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-red);
+        }
+
+        .nav-cta {
+            background: var(--primary-red);
+            color: white !important;
+            padding: 0.65rem 1.75rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(174, 21, 40, 0.2);
+        }
+
+        .nav-cta:hover {
+            background: #8B1020;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(174, 21, 40, 0.3);
+        }
+
+        /* Hero */
+        .page-hero {
+            margin-top: 80px;
+            padding: 5rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--dark-text);
+        }
+
+        .page-hero .tagline {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Section container */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Search */
+        .faq-search-wrap {
+            padding: 2.5rem 2rem 0;
+        }
+
+        .faq-search {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 1rem 1.5rem 1rem 3.25rem;
+            border-radius: 999px;
+            border: 1px solid rgba(174, 21, 40, 0.15);
+            background: var(--cream);
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--dark-text);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .faq-search input:focus {
+            border-color: var(--primary-red);
+            box-shadow: 0 0 0 3px rgba(174, 21, 40, 0.1);
+        }
+
+        .faq-search input::placeholder {
+            color: var(--gray-text);
+        }
+
+        .faq-search .search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        /* Category chips */
+        .chip-row {
+            max-width: 900px;
+            margin: 1.5rem auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+        }
+
+        .chip {
+            border: 1px solid rgba(174, 21, 40, 0.15);
+            background: white;
+            color: var(--gray-text);
+            padding: 0.5rem 1.1rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .chip:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        .chip.active {
+            background: rgba(174, 21, 40, 0.08);
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        /* FAQ categories */
+        .faq-category {
+            margin-bottom: 2.5rem;
+        }
+
+        .faq-category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 1rem;
+        }
+
+        .faq-card {
+            background: var(--cream);
+            border-radius: 16px;
+            border: 1px solid rgba(174, 21, 40, 0.08);
+            overflow: hidden;
+        }
+
+        details.faq-item {
+            border-bottom: 1px solid rgba(174, 21, 40, 0.1);
+        }
+
+        details.faq-item:last-child {
+            border-bottom: none;
+        }
+
+        details.faq-item summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--dark-text);
+        }
+
+        details.faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details.faq-item summary::after {
+            content: '+';
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary-red);
+            transition: transform 0.2s;
+            line-height: 1;
+        }
+
+        details.faq-item[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details.faq-item .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--gray-text);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .faq-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--gray-text);
+            font-size: 1.1rem;
+        }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--cream) 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            color: var(--dark-text);
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: var(--gray-text);
+            margin-bottom: 2rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-red);
+            color: white;
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 4px 16px rgba(174, 21, 40, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #8B1020;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(174, 21, 40, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark-text);
+            padding: 1.1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: 2px solid var(--dark-text);
+        }
+
+        .btn-secondary:hover {
+            background: var(--dark-text);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(44, 36, 22, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-text);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .page-hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            details.faq-item summary {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <svg width="32" height="32" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="79" height="79" rx="11.5" fill="url(#pattern0_66_20)" stroke="#AE1528"/>
+<defs>
+<pattern id="pattern0_66_20" patternUnits="userSpaceOnUse" patternTransform="matrix(90.88 0 0 90.88 0 0)" preserveAspectRatio="none" viewBox="0 0 64 64" width="1" height="1">
+<g id="pattern0_66_20_inner">
+<rect width="8" height="8" fill="#F59898"/>
+<rect x="16" width="8" height="8" fill="#F59898"/>
+<rect x="8" width="8" height="8" fill="#AE1528"/>
+<rect x="24" width="8" height="8" fill="#AE1528"/>
+<rect x="32" width="8" height="8" fill="#F59898"/>
+<rect x="48" width="8" height="8" fill="#F59898"/>
+<rect x="40" width="8" height="8" fill="#AE1528"/>
+<rect x="56" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="8" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="8" width="8" height="8" fill="#F59898"/>
+<rect y="8" width="8" height="8" fill="white"/>
+<rect x="16" y="8" width="8" height="8" fill="white"/>
+<rect x="24" y="8" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="8" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="8" width="8" height="8" fill="white"/>
+<rect x="48" y="8" width="8" height="8" fill="white"/>
+<rect y="16" width="8" height="8" fill="#F59898"/>
+<rect x="16" y="16" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="24" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="32" y="16" width="8" height="8" fill="#F59898"/>
+<rect x="48" y="16" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="16" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="24" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="24" width="8" height="8" fill="#F59898"/>
+<rect y="24" width="8" height="8" fill="white"/>
+<rect x="16" y="24" width="8" height="8" fill="white"/>
+<rect x="24" y="24" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="24" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="24" width="8" height="8" fill="white"/>
+<rect x="48" y="24" width="8" height="8" fill="white"/>
+<rect y="32" width="8" height="8" fill="#F59898"/>
+<rect x="16" y="32" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="24" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="32" y="32" width="8" height="8" fill="#F59898"/>
+<rect x="48" y="32" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="32" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="40" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="40" width="8" height="8" fill="#F59898"/>
+<rect y="40" width="8" height="8" fill="white"/>
+<rect x="16" y="40" width="8" height="8" fill="white"/>
+<rect x="24" y="40" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="40" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="40" width="8" height="8" fill="white"/>
+<rect x="48" y="40" width="8" height="8" fill="white"/>
+<rect y="48" width="8" height="8" fill="#F59898"/>
+<rect x="16" y="48" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="24" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="32" y="48" width="8" height="8" fill="#F59898"/>
+<rect x="48" y="48" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="48" width="8" height="8" fill="#AE1528"/>
+<rect x="56" y="56" width="8" height="8" fill="#F59898"/>
+<rect x="8" y="56" width="8" height="8" fill="#F59898"/>
+<rect y="56" width="8" height="8" fill="white"/>
+<rect x="16" y="56" width="8" height="8" fill="white"/>
+<rect x="24" y="56" width="8" height="8" fill="#F59898"/>
+<rect x="40" y="56" width="8" height="8" fill="#F59898"/>
+<rect x="32" y="56" width="8" height="8" fill="white"/>
+<rect x="48" y="56" width="8" height="8" fill="white"/>
+</g>
+</pattern></defs>
+</svg>
+                <svg width="80" height="24" viewBox="0 0 107 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 38.4V8.4H3.33333V11.0333C4.24444 10.1222 5.3 9.41111 6.5 8.9C7.7 8.38889 8.98889 8.13334 10.3667 8.13334C12.2111 8.13334 13.8778 8.6 15.3667 9.53333C16.8778 10.4444 18.0778 11.6778 18.9667 13.2333C19.8778 14.7889 20.3333 16.5111 20.3333 18.4C20.3333 20.2889 19.8778 22.0111 18.9667 23.5667C18.0778 25.1222 16.8778 26.3667 15.3667 27.3C13.8778 28.2111 12.2111 28.6667 10.3667 28.6667C9.05556 28.6667 7.82222 28.4333 6.66667 27.9667C5.51111 27.5 4.48889 26.8556 3.6 26.0333V38.4H0ZM9.9 25.4C11.1667 25.4 12.3111 25.0889 13.3333 24.4667C14.3778 23.8222 15.2 22.9778 15.8 21.9333C16.4222 20.8667 16.7333 19.6889 16.7333 18.4C16.7333 17.1111 16.4222 15.9444 15.8 14.9C15.2 13.8333 14.3778 12.9889 13.3333 12.3667C12.3111 11.7222 11.1667 11.4 9.9 11.4C8.63333 11.4 7.47778 11.7222 6.43333 12.3667C5.41111 12.9889 4.58889 13.8333 3.96667 14.9C3.36667 15.9444 3.06667 17.1111 3.06667 18.4C3.06667 19.6889 3.36667 20.8667 3.96667 21.9333C4.58889 22.9778 5.41111 23.8222 6.43333 24.4667C7.47778 25.0889 8.63333 25.4 9.9 25.4Z" fill="#323443"/>
+<path d="M25.3125 28.4V8.4H28.9125V28.4H25.3125ZM27.1125 4.8C26.4458 4.8 25.8792 4.56667 25.4125 4.1C24.9458 3.63333 24.7125 3.06667 24.7125 2.4C24.7125 1.71111 24.9458 1.14445 25.4125 0.700001C25.8792 0.233334 26.4458 0 27.1125 0C27.8014 0 28.3681 0.233334 28.8125 0.700001C29.2792 1.14445 29.5125 1.71111 29.5125 2.4C29.5125 3.06667 29.2792 3.63333 28.8125 4.1C28.3681 4.56667 27.8014 4.8 27.1125 4.8Z" fill="#323443"/>
+<path d="M44.4969 28.8C42.5413 28.8 40.7635 28.3333 39.1635 27.4C37.5635 26.4667 36.2858 25.2111 35.3302 23.6333C34.3747 22.0556 33.8969 20.3111 33.8969 18.4C33.8969 16.4889 34.3747 14.7444 35.3302 13.1667C36.2858 11.5889 37.5635 10.3333 39.1635 9.4C40.7635 8.46667 42.5413 8 44.4969 8C45.9413 8 47.2969 8.25556 48.5635 8.76667C49.8302 9.27778 50.9413 9.95556 51.8969 10.8L50.7969 15.3333C50.2413 14.2222 49.3969 13.2889 48.2635 12.5333C47.1524 11.7778 45.8858 11.4 44.4635 11.4C43.1747 11.4 41.9969 11.7222 40.9302 12.3667C39.8858 12.9889 39.0524 13.8333 38.4302 14.9C37.808 15.9444 37.4969 17.1111 37.4969 18.4C37.4969 19.6667 37.808 20.8333 38.4302 21.9C39.0524 22.9667 39.8858 23.8222 40.9302 24.4667C41.9969 25.0889 43.1747 25.4 44.4635 25.4C45.8858 25.4 47.1524 25.0333 48.2635 24.3C49.3969 23.5667 50.2413 22.6222 50.7969 21.4667L51.8969 26C50.9413 26.8444 49.8302 27.5222 48.5635 28.0333C47.2969 28.5444 45.9413 28.8 44.4969 28.8Z" fill="#323443"/>
+<path d="M56.2969 28.4V8.4H59.6302V11.6333C60.3635 10.4556 61.308 9.55556 62.4635 8.93333C63.6413 8.31111 64.908 8 66.2635 8C67.6858 8 68.9969 8.35556 70.1969 9.06667C71.4191 9.75556 72.408 10.7667 73.1635 12.1C73.9191 13.4111 74.2969 15.0111 74.2969 16.9V28.4H70.6969V17.4C70.6969 15.8222 70.2191 14.4333 69.2635 13.2333C68.3302 12.0111 67.008 11.4 65.2969 11.4C63.8969 11.4 62.6413 11.9111 61.5302 12.9333C60.4413 13.9333 59.8969 15.3889 59.8969 17.3V28.4H56.2969Z" fill="#323443"/>
+<path d="M80.2969 28.4V8.4H83.8969V28.4H80.2969ZM82.0969 4.8C81.4302 4.8 80.8635 4.56667 80.3969 4.1C79.9302 3.63333 79.6969 3.06667 79.6969 2.4C79.6969 1.71111 79.9302 1.14445 80.3969 0.700001C80.8635 0.233334 81.4302 0 82.0969 0C82.7858 0 83.3524 0.233334 83.7969 0.700001C84.2635 1.14445 84.4969 1.71111 84.4969 2.4C84.4969 3.06667 84.2635 3.63333 83.7969 4.1C83.3524 4.56667 82.7858 4.8 82.0969 4.8Z" fill="#323443"/>
+<path d="M99.4812 28.8C97.5257 28.8 95.7479 28.3333 94.1479 27.4C92.5479 26.4667 91.2701 25.2111 90.3146 23.6333C89.359 22.0556 88.8812 20.3111 88.8812 18.4C88.8812 16.4889 89.359 14.7444 90.3146 13.1667C91.2701 11.5889 92.5479 10.3333 94.1479 9.4C95.7479 8.46667 97.5257 8 99.4812 8C100.926 8 102.281 8.25556 103.548 8.76667C104.815 9.27778 105.926 9.95556 106.881 10.8L105.781 15.3333C105.226 14.2222 104.381 13.2889 103.248 12.5333C102.137 11.7778 100.87 11.4 99.4479 11.4C98.159 11.4 96.9812 11.7222 95.9146 12.3667C94.8701 12.9889 94.0368 13.8333 93.4146 14.9C92.7924 15.9444 92.4812 17.1111 92.4812 18.4C92.4812 19.6667 92.7924 20.8333 93.4146 21.9C94.0368 22.9667 94.8701 23.8222 95.9146 24.4667C96.9812 25.0889 98.159 25.4 99.4479 25.4C100.87 25.4 102.137 25.0333 103.248 24.3C104.381 23.5667 105.226 22.6222 105.781 21.4667L106.881 26C105.926 26.8444 104.815 27.5222 103.548 28.0333C102.281 28.5444 100.926 28.8 99.4812 28.8Z" fill="#323443"/>
+</svg>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#this-is-picnic">This is Picnic</a></li>
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#waitlist" class="nav-cta">Join Waitlist</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="section-container">
+            <h1>Frequently Asked Questions</h1>
+            <p class="tagline">
+                Everything you need to know about hosting, joining, and making the most of Picnic.
+            </p>
+        </div>
+    </section>
+
+    <!-- Search & filters -->
+    <div class="faq-search-wrap">
+        <div class="faq-search">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="faqSearch" placeholder="Search for help…" autocomplete="off">
+        </div>
+        <div class="chip-row" id="chipRow"></div>
+    </div>
+
+    <!-- FAQ Content -->
+    <section class="section">
+        <div class="section-container">
+            <div id="faqResults"></div>
+            <div class="faq-empty" id="faqEmpty" style="display:none;">No results found. Try a different search, or <a href="support.html">contact us</a> directly.</div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section">
+        <div class="section-container">
+            <h2>Still need help?</h2>
+            <p>Our team is happy to help with anything not covered here.</p>
+            <div class="cta-buttons">
+                <a href="support.html" class="btn-primary">
+                    Contact Support
+                    <span>→</span>
+                </a>
+                <a href="index.html#waitlist" class="btn-secondary">
+                    Join the Waitlist
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#this-is-picnic">This is Picnic</a></li>
+                        <li><a href="index.html#how-it-works">How It Works</a></li>
+                        <li><a href="#">Premium</a></li>
+                        <li><a href="#">Safety</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="mailto:hello@startapicnic.com">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="community-guidelines.html">Community Guidelines</a></li>
+                        <li><a href="support.html">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="eula.html">EULA</a></li>
+                        <li><a href="community-guidelines.html">Community Guidelines</a></li>
+                        <li><a href="subscription-refund-policy.html">Subscription &amp; Refunds</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Picnic. All rights reserved. | Salt Lake City, Utah</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for in-page anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ─── FAQ Data ───────────────────────────────────────────────
+        const FAQ_CATEGORIES = [
+            {
+                category: 'Getting Started',
+                items: [
+                    {
+                        question: 'What is Picnic?',
+                        answer: 'Picnic is a social dining app that helps you discover and join meals with people who share your interests. Whether it\'s breakfast, brunch, lunch, or dinner, you can host your own table, join others, or connect through community groups.'
+                    },
+                    {
+                        question: 'How do I create my first picnic?',
+                        answer: 'Tap the "+" button on the Picnics tab, fill in the event details (meal type, date, time, and location), then publish. Attendees can request to join or auto-join depending on your settings.'
+                    },
+                    {
+                        question: 'Is Picnic free to use?',
+                        answer: 'Picnic is free to download and use. A Premium subscription unlocks additional features: hosting 9 or more guests, restricting RSVPs to Trusted or Verified members, setting gender or professional background preferences, describing your ideal guests on your listing, and creating unlimited groups.'
+                    },
+                    {
+                        question: 'How do I find events near me?',
+                        answer: 'Open the Discover tab and allow location access. Events within your area will appear sorted by distance. Use the filter controls to narrow by date or category.'
+                    }
+                ]
+            },
+            {
+                category: 'Safety & Trust',
+                items: [
+                    {
+                        question: 'How does Picnic verify users?',
+                        answer: 'Picnic uses two trust tiers earned through your activity on the app — there are no identity checks. Trusted members have attended 5+ picnics with a consistent attendance record across multiple hosts. Verified members have a deeper track record: 10+ attended picnics over at least 3 months, or 10+ hosted events over 6 months with 25+ distinct guests. Both badges appear on your profile automatically once you qualify.'
+                    },
+                    {
+                        question: 'What are Trusted and Verified members?',
+                        answer: 'These are Picnic\'s two trust tiers, earned automatically through your history on the app. Trusted means you\'ve attended 5+ picnics with a good attendance rate, visited multiple different hosts, and your account is at least two weeks old. Verified is the higher tier — 10+ attended picnics over 3+ months, or 10+ events hosted over 6+ months with at least 25 distinct attendees. Some hosts require Trusted or Verified status to join their picnics.'
+                    },
+                    {
+                        question: 'What should I do if I feel unsafe at an event?',
+                        answer: 'Leave the event and go somewhere safe immediately. You can report the host or other attendees from the event details page. For emergencies, call your local emergency services.'
+                    },
+                    {
+                        question: 'How do I report inappropriate behavior?',
+                        answer: 'Tap the "..." menu on any profile, event, or group and select "Report." To report a specific message in chat, long-press the message instead. Our Trust & Safety team reviews all reports as quickly as possible.'
+                    },
+                    {
+                        question: 'How do I report a specific message in chat?',
+                        answer: 'Long-press any message in a group chat to bring up the message actions menu, then tap "Report Message." Our Trust & Safety team will receive the message content and the sender\'s profile for review. Use this for harassment, hate speech, or any abusive content you see in a conversation.'
+                    },
+                    {
+                        question: 'Can I block someone?',
+                        answer: 'Yes. Visit the person\'s profile, tap the "..." menu, and select "Block." Blocked users cannot view your profile or events, and you won\'t see theirs.'
+                    }
+                ]
+            },
+            {
+                category: 'Picnics & Events',
+                items: [
+                    {
+                        question: 'How do I cancel an event I\'m hosting?',
+                        answer: 'Go to the event details, tap "Edit," and scroll to the bottom to find the "Cancel Event" option. All attendees will receive a notification.'
+                    },
+                    {
+                        question: 'What happens if a host cancels?',
+                        answer: 'You\'ll receive a push notification letting you know the event has been cancelled.'
+                    },
+                    {
+                        question: 'Can I invite friends directly to a picnic?',
+                        answer: 'Yes. On the event details page, tap "Invite" to share a link via Messages, WhatsApp, or any other app. Your friends can join even if they don\'t have Picnic yet.'
+                    },
+                    {
+                        question: 'What\'s the maximum number of attendees?',
+                        answer: 'You set the attendee cap when creating your event. Free hosts can invite up to 8 guests. Premium members can host larger groups of 9 or more — there\'s no cap beyond that.'
+                    },
+                    {
+                        question: 'What\'s the difference between a public and private picnic?',
+                        answer: 'When hosting, you choose who can see and join your event. Public picnics are listed on Discover and anyone can join instantly. Discoverable picnics appear on Discover but require your approval before someone can attend. Private picnics are invite-only and won\'t appear in public listings.'
+                    },
+                    {
+                        question: 'Why can\'t I join some picnics?',
+                        answer: 'Hosts can set requirements for who can attend. Common reasons you may not be able to join: the event is full, the host has limited RSVPs to Trusted or Verified members, or the host set a guest preference such as professional background or gender. Build your trust tier by attending more events consistently.'
+                    },
+                    {
+                        question: 'Can I save a picnic for later?',
+                        answer: 'Yes — tap the heart icon on any picnic listing to save it. You can find all your saved picnics under the "Saved" tab in the Picnics screen.'
+                    }
+                ]
+            },
+            {
+                category: 'Groups',
+                items: [
+                    {
+                        question: 'What are Groups?',
+                        answer: 'Groups are communities built around shared interests. Members can chat, share events, and plan picnics together. Anyone can create a public or private group.'
+                    },
+                    {
+                        question: 'How do I join a group?',
+                        answer: 'Browse groups from the Groups tab or search by name. Tap "Join" on any public group to become a member instantly. Private groups require host approval.'
+                    }
+                ]
+            },
+            {
+                category: 'Premium',
+                items: [
+                    {
+                        question: 'What\'s included in Premium?',
+                        answer: 'Premium members can host gatherings of 9 or more guests, restrict RSVPs to Trusted or Verified members only, set guest preferences by gender or professional background, add a description of their ideal attendee to their listing, and create unlimited groups. Free accounts are limited to 8 guests per picnic and one group.'
+                    },
+                    {
+                        question: 'How do I cancel my subscription?',
+                        answer: 'On iOS, go to Settings → [Your Name] → Subscriptions and cancel from there. On Android, open Google Play → Subscriptions. Cancellation takes effect at the end of your current billing period.'
+                    },
+                    {
+                        question: 'Is my payment information secure?',
+                        answer: 'All payments are processed by Apple (iOS) or Google (Android) using their secure payment infrastructure. Picnic never stores your card details.'
+                    }
+                ]
+            },
+            {
+                category: 'Account & Privacy',
+                items: [
+                    {
+                        question: 'How do I delete my account?',
+                        answer: 'Go to Profile → Account Settings → Delete Account. This action is permanent and removes all your data, and any picnics you\'re hosting will be automatically cancelled with attendees notified.'
+                    },
+                    {
+                        question: 'Who can see my profile?',
+                        answer: 'Your profile is visible to other Picnic users. For questions about your data or privacy, reach out to us at support@startapicnic.com.'
+                    },
+                    {
+                        question: 'How do I change my email or password?',
+                        answer: 'Go to Profile → Account Settings. From there you can update your email address or reset your password. A verification link will be sent to your current email.'
+                    }
+                ]
+            }
+        ];
+
+        const chipRow = document.getElementById('chipRow');
+        const faqResults = document.getElementById('faqResults');
+        const faqEmpty = document.getElementById('faqEmpty');
+        const searchInput = document.getElementById('faqSearch');
+
+        let activeCategory = null;
+
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function renderChips() {
+            chipRow.innerHTML = FAQ_CATEGORIES.map(cat =>
+                `<button type="button" class="chip${activeCategory === cat.category ? ' active' : ''}" data-cat="${escapeHtml(cat.category)}">${escapeHtml(cat.category)}</button>`
+            ).join('');
+
+            chipRow.querySelectorAll('.chip').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const cat = btn.getAttribute('data-cat');
+                    activeCategory = activeCategory === cat ? null : cat;
+                    render();
+                });
+            });
+        }
+
+        function render() {
+            const q = searchInput.value.trim().toLowerCase();
+            chipRow.style.display = q ? 'none' : 'flex';
+
+            let categories;
+            if (q) {
+                categories = FAQ_CATEGORIES
+                    .map(cat => ({
+                        category: cat.category,
+                        items: cat.items.filter(i =>
+                            i.question.toLowerCase().includes(q) || i.answer.toLowerCase().includes(q)
+                        )
+                    }))
+                    .filter(cat => cat.items.length > 0);
+            } else if (activeCategory) {
+                categories = FAQ_CATEGORIES.filter(cat => cat.category === activeCategory);
+            } else {
+                categories = FAQ_CATEGORIES;
+            }
+
+            if (categories.length === 0) {
+                faqResults.innerHTML = '';
+                faqEmpty.style.display = 'block';
+                return;
+            }
+            faqEmpty.style.display = 'none';
+
+            faqResults.innerHTML = categories.map(cat => `
+                <div class="faq-category">
+                    <div class="faq-category-title">${escapeHtml(cat.category)}</div>
+                    <div class="faq-card">
+                        ${cat.items.map(item => `
+                            <details class="faq-item">
+                                <summary>${escapeHtml(item.question)}</summary>
+                                <div class="faq-answer">${escapeHtml(item.answer)}</div>
+                            </details>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            renderChips();
+        }
+
+        searchInput.addEventListener('input', render);
+        render();
+    </script>
+</body>
+</html>
