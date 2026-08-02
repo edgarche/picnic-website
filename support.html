@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about Picnic - building community through meaningful meals and real connections.">
-    <title>About Us - Picnic</title>
-    
+    <meta name="description" content="Get help with Picnic. Contact our support team or browse frequently asked questions.">
+    <title>Support - Picnic</title>
+
     <style>
         * {
             margin: 0;
@@ -95,47 +95,47 @@
             box-shadow: 0 4px 12px rgba(174, 21, 40, 0.3);
         }
 
-        /* Hero Section */
-        .about-hero {
+        /* Hero */
+        .page-hero {
             margin-top: 80px;
             padding: 5rem 2rem 4rem;
             background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
             text-align: center;
         }
 
-        .about-hero h1 {
-            font-size: 3.5rem;
+        .page-hero h1 {
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             color: var(--dark-text);
         }
 
-        .about-hero .tagline {
-            font-size: 1.5rem;
+        .page-hero .tagline {
+            font-size: 1.25rem;
             color: var(--gray-text);
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            max-width: 650px;
+            margin: 0 auto;
             line-height: 1.7;
         }
 
-        /* Section Container */
+        /* Section container */
         .section {
-            padding: 5rem 2rem;
+            padding: 4.5rem 2rem;
         }
 
         .section-container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .section-narrow {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
         }
 
         .section-header .kicker {
@@ -148,167 +148,139 @@
         }
 
         .section-header h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1.25rem;
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
             font-weight: 700;
             color: var(--dark-text);
         }
 
         .section-header p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--gray-text);
             line-height: 1.7;
         }
 
-        /* Story Section */
-        .story-section {
-            background: white;
-        }
-
-        .story-content {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: var(--dark-text);
-        }
-
-        .story-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .story-content .highlight {
-            color: var(--primary-red);
-            font-weight: 600;
-        }
-
-        .story-stats {
+        /* Contact cards */
+        .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            padding: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-card {
             background: var(--cream);
             border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(174, 21, 40, 0.08);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
-        .stat {
-            text-align: center;
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(174, 21, 40, 0.12);
         }
 
-        .stat .number {
-            font-size: 2.5rem;
-            font-weight: 700;
+        .contact-card .icon-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(174, 21, 40, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.4rem;
+            color: var(--dark-text);
+        }
+
+        .contact-card p {
             color: var(--primary-red);
-            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
         }
 
-        .stat .label {
+        .contact-card .sub {
+            color: var(--gray-text);
+            font-weight: 400;
+            font-size: 0.95rem;
+            margin-top: 0.35rem;
+        }
+
+        /* Response time note */
+        .response-note {
+            text-align: center;
             color: var(--gray-text);
             font-size: 0.95rem;
+            margin-top: 2rem;
         }
 
-        /* Mission Section */
-        .mission-section {
+        /* FAQ callout */
+        .faq-callout {
             background: linear-gradient(135deg, var(--primary-red) 0%, #8B1020 100%);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            text-align: center;
             color: white;
         }
 
-        .mission-section .section-header h2,
-        .mission-section .section-header .kicker {
-            color: white;
+        .faq-callout h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
         }
 
-        .mission-section .section-header p {
+        .faq-callout p {
             color: rgba(255, 255, 255, 0.9);
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .mission-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .mission-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .mission-card p {
-            line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Values Section */
-        .values-section {
-            background: white;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .value-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .value-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .value-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-text);
-        }
-
-        .value-card p {
-            color: var(--gray-text);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 1.75rem;
             line-height: 1.7;
         }
 
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--warm-beige) 0%, var(--cream) 100%);
-            text-align: center;
+        /* Legal links list */
+        .legal-list {
+            background: var(--cream);
+            border-radius: 16px;
+            border: 1px solid rgba(174, 21, 40, 0.08);
+            overflow: hidden;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-text);
-        }
-
-        .cta-section p {
-            font-size: 1.25rem;
-            color: var(--gray-text);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
+        .legal-list a {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.15rem 1.5rem;
+            text-decoration: none;
+            color: var(--dark-text);
+            font-weight: 600;
+            border-bottom: 1px solid rgba(174, 21, 40, 0.1);
+            transition: color 0.2s;
         }
 
+        .legal-list a:last-child {
+            border-bottom: none;
+        }
+
+        .legal-list a:hover {
+            color: var(--primary-red);
+        }
+
+        .legal-list a .arrow {
+            color: var(--primary-red);
+            font-weight: 400;
+        }
+
+        /* Buttons */
         .btn-primary {
-            background: var(--primary-red);
-            color: white;
+            background: white;
+            color: var(--primary-red);
             padding: 1.1rem 2.5rem;
             border-radius: 50px;
             font-size: 1.125rem;
@@ -318,35 +290,20 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            box-shadow: 0 4px 16px rgba(174, 21, 40, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         }
 
         .btn-primary:hover {
-            background: #8B1020;
             transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(174, 21, 40, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-secondary {
-            background: white;
-            color: var(--dark-text);
-            padding: 1.1rem 2.5rem;
-            border-radius: 50px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            border: 2px solid var(--dark-text);
-        }
-
-        .btn-secondary:hover {
-            background: var(--dark-text);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(44, 36, 22, 0.2);
+        /* App info */
+        .app-info {
+            text-align: center;
+            padding: 2rem 2rem 0.5rem;
+            color: var(--gray-text);
+            font-size: 0.9rem;
         }
 
         /* Footer */
@@ -425,25 +382,16 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .about-hero h1 {
-                font-size: 2.5rem;
+            .page-hero h1 {
+                font-size: 2.25rem;
             }
 
-            .about-hero .tagline {
-                font-size: 1.25rem;
+            .page-hero .tagline {
+                font-size: 1.1rem;
             }
 
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                justify-content: center;
+            .faq-callout {
+                padding: 2.5rem 1.5rem;
             }
 
             .footer-bottom {
@@ -543,167 +491,85 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#this-is-picnic">This is Picnic</a></li>
                 <li><a href="index.html#how-it-works">How It Works</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="index.html#waitlist" class="nav-cta">Join Waitlist</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="about-hero">
+    <!-- Hero -->
+    <section class="page-hero">
         <div class="section-container">
-            <h1>Building Community, One Meal at a Time</h1>
+            <h1>Support</h1>
             <p class="tagline">
-                We believe the best conversations happen around a table, and the best friendships start with a shared meal.
+                Need a hand? Here's how to reach us, plus quick answers to common questions.
             </p>
         </div>
     </section>
 
-    <!-- Story Section -->
-    <section class="section story-section">
-        <div class="section-container">
-            <div class="section-narrow">
-                <div class="section-header">
-                    <div class="kicker">Our Story</div>
-                    <h2>Why Picnic Exists</h2>
-                </div>
-                
-                <div class="story-content">
-                    <p>
-                        We live in the most connected era in human history, yet loneliness has become an epidemic. People have hundreds of contacts but struggle to find someone to grab lunch with. We attend networking events but leave feeling more isolated than before. We scroll endlessly but crave real conversation.
-                    </p>
-                    
-                    <p>
-                        Here's what we've noticed: the conversations that change everything don't happen in conference rooms or through screens—they happen over meals. A casual coffee that turns into a three-hour conversation. A lunch where a work acquaintance becomes a trusted friend. A dinner where strangers discover they're building similar dreams.
-                    </p>
-                    
-                    <p>
-                        There's something almost magical about sharing food. Guards come down. Conversations go deeper. Laughter flows easier. Ideas spark naturally. And somewhere between the appetizers and dessert, strangers become people you actually want to see again.
-                    </p>
-                    
-                    <p>
-                        But here's the problem: making it happen is harder than it should be. Coordinating schedules. Finding the right people. Working up the courage to invite someone you barely know. So most of us default to eating alone at our desks, scrolling through our phones, or skipping the opportunity altogether.
-                    </p>
-                    
-                    <p>
-                        That's why we built Picnic. Not to solve loneliness with an algorithm, but to make the solution—sharing meals with interesting people—ridiculously easy. Because real joy comes from friendship. Real connections happen over shared food. And real community is built one conversation at a time.
-                    </p>
-                    
-                    <p>
-                        We started in early 2025 with a simple belief: the world needs more shared tables and fewer lonely lunch breaks. Picnic is our way of making that happen.
-                    </p>
-                </div>
-
-                <div class="story-stats">
-                    <div class="stat">
-                        <div class="number">61%</div>
-                        <div class="label">of Americans report feeling lonely</div>
-                    </div>
-                    <div class="stat">
-                        <div class="number">8,247</div>
-                        <div class="label">people on our waitlist</div>
-                    </div>
-                    <div class="stat">
-                        <div class="number">March 2026</div>
-                        <div class="label">Launching in Salt Lake City</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="section mission-section">
+    <!-- Talk to Us -->
+    <section class="section">
         <div class="section-container">
             <div class="section-header">
-                <div class="kicker">Our Mission</div>
-                <h2>What We're Building</h2>
-                <p>More than an app—a movement to rebuild human connection</p>
+                <div class="kicker">Talk to Us</div>
+                <h2>Contact Support</h2>
+                <p>Have a question or need help? Reach out and we'll get back to you within one business day.</p>
             </div>
 
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <h3>Make Friendship Easy</h3>
-                    <p>Meeting people shouldn't require courage or perfect timing. We're building a platform where finding your next friend is as simple as choosing a meal.</p>
-                </div>
-                <div class="mission-card">
-                    <h3>Elevate Conversation</h3>
-                    <p>Small talk is overrated. Every Picnic comes with a conversation topic designed to spark real dialogue, so you skip straight to the good stuff.</p>
-                </div>
-                <div class="mission-card">
-                    <h3>Build Real Community</h3>
-                    <p>We're not building a user base—we're nurturing communities of people who show up, care about each other, and turn strangers into lifelong friends.</p>
-                </div>
+            <div class="contact-grid">
+                <a href="mailto:support@startapicnic.com" class="contact-card">
+                    <div class="icon-circle">✉️</div>
+                    <h3>General Support</h3>
+                    <p>support@startapicnic.com</p>
+                    <div class="sub">Account issues, bugs, event or safety concerns</div>
+                </a>
+
+                <a href="mailto:hello@startapicnic.com" class="contact-card">
+                    <div class="icon-circle">🤝</div>
+                    <h3>Partnerships & Press</h3>
+                    <p>hello@startapicnic.com</p>
+                    <div class="sub">Media inquiries, collaborations, and partnerships</div>
+                </a>
             </div>
+
+            <p class="response-note">For urgent safety concerns during an in-person event, please contact local emergency services first.</p>
         </div>
     </section>
 
-    <!-- Values Section -->
-    <section class="section values-section">
+    <!-- FAQ Callout -->
+    <section class="section" style="padding-top: 0;">
         <div class="section-container">
-            <div class="section-header">
-                <div class="kicker">Our Values</div>
-                <h2>What Drives Us</h2>
-                <p>The principles that guide every decision we make</p>
-            </div>
-
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="icon">🤝</div>
-                    <h3>People First, Always</h3>
-                    <p>Every feature, every decision, every line of code exists to serve one purpose: helping real people form real friendships.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="icon">💬</div>
-                    <h3>Conversation Over Connection</h3>
-                    <p>Collecting contacts is easy. Having meaningful conversations is rare. We optimize for depth, not breadth.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="icon">🌱</div>
-                    <h3>Community, Not Growth</h3>
-                    <p>We're building a community of people who show up and care, not chasing vanity metrics or viral growth.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="icon">✨</div>
-                    <h3>Simplicity Wins</h3>
-                    <p>Meeting people should be simple. We strip away everything that doesn't serve the core experience.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="icon">🔒</div>
-                    <h3>Trust & Safety</h3>
-                    <p>Real community requires real trust. We build features that ensure every Picnic feels safe and welcoming.</p>
-                </div>
-
-                <div class="value-card">
-                    <div class="icon">🎯</div>
-                    <h3>Quality Over Quantity</h3>
-                    <p>One great friend is worth a thousand acquaintances. We design for meaningful connections, not maximum matches.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="section-container">
-            <h2>Join Us on This Journey</h2>
-            <p>
-                Whether you're looking to join our waitlist, explore opportunities, or just want to say hello—we'd love to hear from you.
-            </p>
-            
-            <div class="cta-buttons">
-                <a href="index.html#waitlist" class="btn-primary">
-                    Join the Waitlist
+            <div class="faq-callout">
+                <h2>Looking for a quick answer?</h2>
+                <p>Browse our Frequently Asked Questions for instant answers on getting started, safety, events, groups, and Premium.</p>
+                <a href="faq.html" class="btn-primary">
+                    Visit the FAQ
                     <span>→</span>
                 </a>
-                <a href="/cdn-cgi/l/email-protection#b2d3d6dfdbdcf2c1c6d3c0c6d3c2dbd1dcdbd19cd1dddf" class="btn-secondary">
-                    Get in Touch
-                    <span>✉</span>
-                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">Legal</div>
+                <h2>Policies & Guidelines</h2>
+            </div>
+
+            <div class="section-narrow">
+                <div class="legal-list">
+                    <a href="privacy.html">Privacy Policy <span class="arrow">→</span></a>
+                    <a href="terms.html">Terms of Service <span class="arrow">→</span></a>
+                    <a href="eula.html">EULA <span class="arrow">→</span></a>
+                    <a href="community-guidelines.html">Community Guidelines <span class="arrow">→</span></a>
+                    <a href="subscription-refund-policy.html">Subscription &amp; Refunds <span class="arrow">→</span></a>
+                </div>
+            </div>
+
+            <div class="app-info">
+                Made with ❤️ in Salt Lake City
             </div>
         </div>
     </section>
@@ -726,7 +592,7 @@
                     <ul>
                         <li><a href="about.html">About</a></li>
                         <li><a href="#">Blog</a></li>
-                        <li><a href="/cdn-cgi/l/email-protection#8dece9e0e4e3cdfef9ecfff9ecfde4eee3e4eea3eee2e0">Contact</a></li>
+                        <li><a href="mailto:hello@startapicnic.com">Contact</a></li>
                         <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
@@ -734,7 +600,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="community-guidelines.html">Community Guidelines</a></li>
                         <li><a href="support.html">Help Center</a></li>
                     </ul>
                 </div>
@@ -749,7 +615,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>© 2025 Picnic. All rights reserved. | Salt Lake City, Utah</p>
                 <div class="social-links">
@@ -761,9 +627,18 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Smooth scrolling
+    <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
