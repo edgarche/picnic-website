@@ -12,6 +12,7 @@ nav_active: home
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="apple-itunes-app" content="app-id=6760216981">
     <link rel="stylesheet" href="/assets/site.css">
 
     <style>
@@ -129,6 +130,19 @@ nav_active: home
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 8px 24px rgba(44, 36, 22, 0.2);
+        }
+
+        .btn-disabled {
+            background: #f2ede4;
+            color: #9a9284;
+            border: 2px solid #ddd5c7;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .btn-disabled:hover {
+            transform: none;
+            box-shadow: none;
         }
 
         .hero-visual {
@@ -826,14 +840,14 @@ nav_active: home
             <p>Every table needs one more seat. Come find yours.</p>
 
             <div class="cta-buttons" style="justify-content: center;">
-                <a href="#" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 3rem;">
+                <a href="https://apps.apple.com/ph/app/picnic-social/id6760216981" class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 3rem;" target="_blank" rel="noopener">
                     Download on the App Store
                     <span>→</span>
                 </a>
-                <a href="#" class="btn-secondary" style="font-size: 1.25rem; padding: 1.25rem 3rem;">
+                <span class="btn-secondary btn-disabled" style="font-size: 1.25rem; padding: 1.25rem 3rem;" aria-disabled="true">
                     Get it on Google Play
-                    <span>→</span>
-                </a>
+                    <span style="font-size: 0.85rem; font-weight: 500;">Coming Soon</span>
+                </span>
             </div>
         </div>
     </section>
