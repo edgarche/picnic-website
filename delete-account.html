@@ -1,0 +1,318 @@
+---
+nav_active: delete-account
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to request deletion of your Picnic account and data, and what happens to your information when you do.">
+    <title>Delete Your Account - Picnic</title>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="apple-itunes-app" content="app-id=6760216981">
+    <link rel="stylesheet" href="/assets/site.css">
+
+    <style>
+        /* Hero */
+        .page-hero {
+            margin-top: 80px;
+            padding: 5rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--dark-text);
+        }
+
+        .page-hero .tagline {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Section container */
+        .section {
+            padding: 4.5rem 2rem;
+        }
+
+        .section-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-narrow {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header .kicker {
+            font-size: 0.95rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--gray-text);
+            line-height: 1.7;
+        }
+
+        /* Steps list */
+        .steps-list {
+            background: var(--cream);
+            border-radius: 20px;
+            border: 1px solid rgba(174, 21, 40, 0.08);
+            padding: 2.5rem;
+        }
+
+        .steps-list ol {
+            list-style: none;
+            counter-reset: step-counter;
+            margin: 0;
+            padding: 0;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.1rem 0;
+            border-bottom: 1px solid rgba(174, 21, 40, 0.1);
+            font-size: 1.05rem;
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        .steps-list li:last-child {
+            border-bottom: none;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--primary-red);
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .steps-list strong {
+            color: var(--primary-red);
+        }
+
+        /* Data table */
+        .data-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .data-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(174, 21, 40, 0.08);
+        }
+
+        .data-card .icon-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(174, 21, 40, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .data-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark-text);
+        }
+
+        .data-card ul {
+            margin: 0;
+            padding-left: 1.2rem;
+            color: var(--gray-text);
+            line-height: 1.8;
+        }
+
+        /* Alt method callout */
+        .alt-method {
+            background: white;
+            border: 2px solid rgba(174, 21, 40, 0.15);
+            border-radius: 16px;
+            padding: 1.75rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .alt-method h4 {
+            color: var(--dark-text);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .alt-method p {
+            color: var(--gray-text);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .alt-method a {
+            color: var(--primary-red);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .alt-method a:hover {
+            text-decoration: underline;
+        }
+
+        /* App info */
+        .app-info {
+            text-align: center;
+            padding: 2rem 2rem 0.5rem;
+            color: var(--gray-text);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .page-hero .tagline {
+                font-size: 1.1rem;
+            }
+
+            .steps-list {
+                padding: 1.75rem 1.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    {% include nav.html %}
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="section-container">
+            <h1>Delete Your Picnic Account</h1>
+            <p class="tagline">
+                Picnic, developed by Picnic, gives you full control over your account and your data. Here is how to request deletion, and exactly what happens to your information when you do.
+            </p>
+        </div>
+    </section>
+
+    <!-- Steps -->
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">Step by Step</div>
+                <h2>How to Request Deletion</h2>
+                <p>You can delete your account directly from the Picnic app in under a minute.</p>
+            </div>
+
+            <div class="steps-list">
+                <ol>
+                    <li>Open the Picnic app and sign in to your account.</li>
+                    <li>Go to <strong>Profile</strong> in the bottom navigation.</li>
+                    <li>Tap <strong>Account Settings</strong>.</li>
+                    <li>Tap <strong>Delete Account</strong>.</li>
+                    <li>Confirm the deletion when prompted. This action is permanent and cannot be undone.</li>
+                </ol>
+            </div>
+
+            <div class="alt-method">
+                <h4>Don't have access to the app?</h4>
+                <p>Email <a href="mailto:support@startapicnic.com">support@startapicnic.com</a> from the address associated with your account and request account deletion. We will confirm your identity and process the request within 30 days.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data details -->
+    <section class="section" style="padding-top: 0;">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="kicker">What Happens to Your Data</div>
+                <h2>Data Deleted vs. Retained</h2>
+                <p>When you delete your account, most of your personal data is permanently removed. A limited amount is retained as described below.</p>
+            </div>
+
+            <div class="data-cards">
+                <div class="data-card">
+                    <div class="icon-circle">🗑️</div>
+                    <h3>Deleted within 30 days</h3>
+                    <ul>
+                        <li>Your profile, photos, and account details</li>
+                        <li>Your login credentials</li>
+                        <li>Direct messages and group chat history</li>
+                        <li>Saved preferences and settings</li>
+                    </ul>
+                </div>
+
+                <div class="data-card">
+                    <div class="icon-circle">📁</div>
+                    <h3>Retained after deletion</h3>
+                    <ul>
+                        <li>Anonymized or aggregated data used for analytics and product improvement, which no longer identifies you</li>
+                        <li>Picnic or event history you were part of, retained in de-identified form so the record stays accurate for other attendees</li>
+                        <li>Information we are required to keep for legal, safety, or regulatory reasons</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="response-note" style="text-align: center; color: var(--gray-text); margin-top: 2rem;">
+                For the complete data retention policy, see Section 4 of our <a href="privacy.html" style="color: var(--primary-red); font-weight: 600;">Privacy Policy</a>.
+            </p>
+        </div>
+    </section>
+
+    <div class="app-info">
+        Made with ❤️ in Salt Lake City
+    </div>
+
+    {% include footer.html %}
+
+    <script src="/assets/site.js"></script>
+</body>
+</html>
