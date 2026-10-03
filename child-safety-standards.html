@@ -1,0 +1,489 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Picnic's Child Safety Standards — our commitment to preventing child sexual abuse and exploitation (CSAE).">
+    <title>Child Safety Standards - Picnic</title>
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="apple-itunes-app" content="app-id=6760216981">
+    <link rel="stylesheet" href="/assets/site.css">
+
+    <style>
+        /* ── Page Hero ── */
+        .legal-hero {
+            margin-top: 80px;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            text-align: center;
+        }
+
+        .legal-hero .kicker {
+            font-size: 0.9rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--gray-text);
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .legal-hero .meta {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        /* ── Layout ── */
+        .legal-layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* ── Sidebar TOC ── */
+        .toc {
+            position: sticky;
+            top: 100px;
+        }
+
+        .toc-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        .toc-list a {
+            text-decoration: none;
+            font-size: 0.875rem;
+            color: var(--gray-text);
+            transition: color 0.2s;
+            display: block;
+            padding: 0.25rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .toc-list a:hover {
+            color: var(--primary-red);
+            border-left-color: var(--primary-red);
+        }
+
+        .toc-divider {
+            height: 1px;
+            background: var(--warm-beige);
+            margin: 1rem 0;
+        }
+
+        .toc-other-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .toc-other-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-red);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .toc-other-link:hover {
+            opacity: 0.75;
+        }
+
+        /* ── Document Body ── */
+        .legal-content {
+            min-width: 0;
+        }
+
+        .intro-box {
+            background: rgba(174, 21, 40, 0.06);
+            border-left: 4px solid var(--primary-red);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+            color: var(--dark-text);
+            line-height: 1.8;
+        }
+
+        .legal-section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 100px;
+        }
+
+        .legal-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--warm-beige);
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+        }
+
+        .section-number {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            background: rgba(174, 21, 40, 0.08);
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            flex-shrink: 0;
+        }
+
+        .legal-section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--dark-text);
+            margin: 1.75rem 0 0.75rem;
+        }
+
+        .legal-section p {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+
+        .legal-section ul {
+            margin: 0.75rem 0 1rem 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .legal-section ul li {
+            font-size: 1rem;
+            color: var(--gray-text);
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .legal-section ul li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        /* ── Ban list ── */
+        .ban-list {
+            background: rgba(174, 21, 40, 0.05);
+            border: 1px solid rgba(174, 21, 40, 0.15);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.25rem 0;
+        }
+
+        .ban-list .ban-header {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .ban-list ul {
+            margin: 0;
+        }
+
+        .ban-list ul li::before {
+            content: '✕';
+            color: var(--primary-red);
+        }
+
+        /* ── Info card ── */
+        .info-card {
+            background: var(--cream);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.25rem 0;
+        }
+
+        .info-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-card p {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ── Contact Box ── */
+        .contact-box {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--warm-beige) 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box p {
+            color: var(--gray-text);
+            margin-bottom: 1rem;
+        }
+
+        .contact-box a {
+            color: var(--primary-red);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Closing note ── */
+        .closing-note {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--dark-text);
+            line-height: 1.85;
+            border-top: 2px solid var(--warm-beige);
+            padding-top: 2rem;
+            margin-top: 1rem;
+        }
+
+        /* ── Footer ── */
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+            padding-left: 0;
+        }
+
+        .footer-section ul li::before {
+            display: none;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .legal-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: static;
+                background: var(--cream);
+                padding: 1.5rem;
+                border-radius: 16px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .legal-hero h1 {
+                font-size: 2rem;
+            }
+
+            .legal-section h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    {% include nav.html %}
+
+    <!-- Hero -->
+    <section class="legal-hero">
+        <div class="kicker">Safety</div>
+        <h1>Child Safety Standards</h1>
+        <p class="subtitle">Our commitment to preventing child sexual abuse and exploitation (CSAE)</p>
+        <p class="meta">Effective Date: October 3, 2026 &nbsp;|&nbsp; Last Updated: October 3, 2026</p>
+    </section>
+
+    <!-- Two-column layout -->
+    <div class="legal-layout">
+
+        <!-- Sidebar TOC -->
+        <aside class="toc">
+            <div class="toc-label">On this page</div>
+            <ul class="toc-list">
+                <li><a href="#s1">1. Our Commitment</a></li>
+                <li><a href="#s2">2. Age Requirements</a></li>
+                <li><a href="#s3">3. Prohibited Conduct</a></li>
+                <li><a href="#s4">4. How We Respond</a></li>
+                <li><a href="#s5">5. Reporting a Concern</a></li>
+                <li><a href="#s6">6. Compliance</a></li>
+                <li><a href="#s7">7. Contact</a></li>
+            </ul>
+            <div class="toc-divider"></div>
+            <div class="toc-other-links">
+                <a href="terms.html" class="toc-other-link">Terms of Service →</a>
+                <a href="privacy.html" class="toc-other-link">Privacy Policy →</a>
+                <a href="community-guidelines.html" class="toc-other-link">Community Guidelines →</a>
+            </div>
+        </aside>
+
+        <!-- Document content -->
+        <main class="legal-content">
+
+            <div class="intro-box">
+                Picnic is a social dining platform for adults. Protecting children is not a secondary consideration for us — it is a non-negotiable baseline. This page describes our standards for preventing child sexual abuse and exploitation (CSAE) across the platform, what we prohibit, how we enforce it, and how to report a concern.
+                <br><br>
+                These Child Safety Standards are incorporated into and governed by Picnic's <a href="terms.html" style="color: var(--primary-red); font-weight: 600;">Terms of Service</a> and <a href="community-guidelines.html" style="color: var(--primary-red); font-weight: 600;">Community Guidelines</a>.
+            </div>
+
+            <!-- 1 -->
+            <section class="legal-section" id="s1">
+                <h2><span class="section-number">1</span> Our Commitment</h2>
+                <p>Picnic is an adult social dining platform intended solely for users 18 and older. We have zero tolerance for child sexual abuse material (CSAM), child sexual exploitation, or any behavior that endangers minors, anywhere on our platform or in connection with our services.</p>
+                <p>This policy applies regardless of a user's intent to use the platform for its intended adult audience. There is no exception, no warning, and no second chance for violations of this kind.</p>
+            </section>
+
+            <!-- 2 -->
+            <section class="legal-section" id="s2">
+                <h2><span class="section-number">2</span> Age Requirements</h2>
+                <p>Creating a Picnic account requires confirming your birthdate at signup. Picnic is only available to users who are 18 years of age or older.</p>
+                <p>Attempting to misrepresent your age in order to access the platform is a violation of our Terms of Service and of these Child Safety Standards, and will result in immediate account termination.</p>
+            </section>
+
+            <!-- 3 -->
+            <section class="legal-section" id="s3">
+                <h2><span class="section-number">3</span> Prohibited Conduct</h2>
+                <p>The following is strictly prohibited on Picnic, without exception:</p>
+                <div class="ban-list">
+                    <div class="ban-header">Zero tolerance — immediate permanent ban</div>
+                    <ul>
+                        <li>Creating, uploading, sharing, or soliciting child sexual abuse material (CSAM) in any form</li>
+                        <li>Using Picnic to contact, groom, meet, or communicate with anyone under the age of 18</li>
+                        <li>Impersonating a minor, or using the platform to target minors in any way</li>
+                        <li>Any sexualized content or commentary involving minors</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 4 -->
+            <section class="legal-section" id="s4">
+                <h2><span class="section-number">4</span> How We Respond</h2>
+                <p>Any account found violating these standards is immediately and permanently banned. There is no warning tier for this kind of violation, consistent with our Community Guidelines enforcement policy for the most serious offenses.</p>
+                <p>We preserve relevant account and report information for as long as legally required, and provide it to law enforcement or regulatory bodies as required by law.</p>
+            </section>
+
+            <!-- 5 -->
+            <section class="legal-section" id="s5">
+                <h2><span class="section-number">5</span> Reporting a Concern</h2>
+                <p>If you see or suspect a violation of these standards, report it immediately. You can report any user, message, or event through the in-app report feature, or by emailing <a href="mailto:support@startapicnic.com" style="color: var(--primary-red);">support@startapicnic.com</a>.</p>
+                <p>All reports involving suspected child sexual abuse or exploitation are reviewed promptly and escalated appropriately, including to the National Center for Missing &amp; Exploited Children (NCMEC) CyberTipline and/or law enforcement where required by law.</p>
+                <div class="info-card">
+                    <h4>🚨 If a child is in immediate danger</h4>
+                    <p>Contact local emergency services (911) first. Picnic's reporting system is not a substitute for emergency services.</p>
+                </div>
+            </section>
+
+            <!-- 6 -->
+            <section class="legal-section" id="s6">
+                <h2><span class="section-number">6</span> Compliance</h2>
+                <p>Picnic complies with all applicable child safety laws, including mandatory reporting obligations under U.S. law (18 U.S.C. § 2258A). We work with the National Center for Missing &amp; Exploited Children (NCMEC) and law enforcement as required by law.</p>
+            </section>
+
+            <!-- 7 -->
+            <section class="legal-section" id="s7">
+                <h2><span class="section-number">7</span> Contact</h2>
+                <p>Our designated point of contact for child safety concerns is <a href="mailto:support@startapicnic.com" style="color: var(--primary-red);">support@startapicnic.com</a>.</p>
+
+                <p class="closing-note">Protecting kids from exploitation is not optional, and it is not up for debate. If you ever have a concern, tell us. We will act on it.</p>
+
+                <div class="contact-box">
+                    <h3>Questions or concerns?</h3>
+                    <p>Reach out to our team anytime.</p>
+                    <a href="mailto:support@startapicnic.com">support@startapicnic.com</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    {% include footer.html %}
+
+    <script src="/assets/site.js"></script>
+    <script>
+        const sections = document.querySelectorAll('.legal-section');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tocLinks.forEach(link => {
+                        link.style.color = '';
+                        link.style.borderLeftColor = '';
+                    });
+                    const activeLink = document.querySelector(`.toc-list a[href="#${entry.target.id}"]`);
+                    if (activeLink) {
+                        activeLink.style.color = '#AE1528';
+                        activeLink.style.borderLeftColor = '#AE1528';
+                    }
+                }
+            });
+        }, { rootMargin: '-80px 0px -60% 0px' });
+
+        sections.forEach(s => observer.observe(s));
+    </script>
+
+</body>
+</html>
